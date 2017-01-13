@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid XML 2016 Designer Edition (Trial) 14.1.5.6733 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="data">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="game">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="match_id" type="xs:unsignedInt" />
+              <xs:element minOccurs="0" name="date" type="xs:string" />
+              <xs:element minOccurs="0" name="season" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="played" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="type" type="xs:string" />
+              <xs:element minOccurs="0" name="round" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="home_team" type="xs:string" />
+              <xs:element minOccurs="0" name="home_team_id" type="xs:unsignedShort" />
+              <xs:element minOccurs="0" name="home_city" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="away_team" type="xs:string" />
+              <xs:element minOccurs="0" name="away_team_id" type="xs:unsignedShort" />
+              <xs:element minOccurs="0" name="away_city" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="home_goals" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="away_goals" type="xs:unsignedByte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

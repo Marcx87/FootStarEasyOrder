@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid XML 2016 Designer Edition (Trial) 14.1.5.6733 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="team_data">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="team_userid" type="xs:unsignedShort" />
+        <xs:element minOccurs="0" name="team_playerid" type="xs:unsignedInt" />
+        <xs:element minOccurs="0" name="team_useralias" type="xs:string" />
+        <xs:element minOccurs="0" name="team_id" type="xs:unsignedShort" />
+        <xs:element minOccurs="0" name="b_team">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:unsignedByte">
+                <xs:attribute name="main_team_id" type="xs:unsignedByte" use="optional" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="team_name" type="xs:string" />
+        <xs:element minOccurs="0" name="team_long_name" type="xs:string" />
+        <xs:element minOccurs="0" name="team_country_id" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="team_city" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="stadium">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="north" type="xs:unsignedShort" />
+              <xs:element minOccurs="0" name="south" type="xs:unsignedShort" />
+              <xs:element minOccurs="0" name="east" type="xs:unsignedShort" />
+              <xs:element minOccurs="0" name="west" type="xs:unsignedShort" />
+              <xs:element minOccurs="0" name="neast" type="xs:unsignedShort" />
+              <xs:element minOccurs="0" name="nwest" type="xs:unsignedShort" />
+              <xs:element minOccurs="0" name="seast" type="xs:unsignedShort" />
+              <xs:element minOccurs="0" name="swest" type="xs:unsignedShort" />
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="optional" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="supporters" type="xs:unsignedShort" />
+        <xs:element minOccurs="0" name="average_attendance" type="xs:unsignedShort" />
+        <xs:element minOccurs="0" name="division" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="series" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="position" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="games_without_winning" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="games_without_losing" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="wins_in_a_row" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="draws_in_a_row" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="losts_in_a_row" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="last_game" type="xs:unsignedInt" />
+        <xs:element minOccurs="0" name="last_game_type" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="weekly_training">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Monday1" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Monday2" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Monday3" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Tuesday1" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Tuesday2" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Tuesday3" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Wednesday1" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Wednesday2" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Wednesday3" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Thursday1" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Thursday2" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Thursday3" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Friday1" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Friday2" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Friday3" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Saturday1" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Saturday2" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Saturday3" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Sunday1" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Sunday2" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="Sunday3" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="last_changed" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="team_players">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="player">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:choice maxOccurs="unbounded">
+                      <xs:element minOccurs="0" name="player_id" type="xs:unsignedInt" />
+                      <xs:element minOccurs="0" name="user_id" type="xs:unsignedInt" />
+                      <xs:element minOccurs="0" name="team_id" type="xs:unsignedShort" />
+                      <xs:element minOccurs="0" name="team_name" type="xs:string" />
+                      <xs:element minOccurs="0" name="last_login" type="xs:string" />
+                      <xs:element minOccurs="0" name="registration_date" type="xs:string" />
+                      <xs:element minOccurs="0" name="player_name" type="xs:string" />
+                      <xs:element minOccurs="0" name="position_full" type="xs:string" />
+                      <xs:element minOccurs="0" name="position" type="xs:string"/>                        
+                      <xs:element minOccurs="0" name="side_left">
+                        <xs:complexType>
+                          <xs:simpleContent>
+                            <xs:extension base="xs:unsignedByte">
+                              <xs:attribute name="per" type="xs:string" use="optional" />
+                            </xs:extension>
+                          </xs:simpleContent>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" name="side_right">
+                        <xs:complexType>
+                          <xs:simpleContent>
+                            <xs:extension base="xs:unsignedByte">
+                              <xs:attribute name="per" type="xs:string" use="optional" />
+                            </xs:extension>
+                          </xs:simpleContent>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" name="side_center">
+                        <xs:complexType>
+                          <xs:simpleContent>
+                            <xs:extension base="xs:unsignedByte">
+                              <xs:attribute name="per" type="xs:string" use="optional" />
+                            </xs:extension>
+                          </xs:simpleContent>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" name="age" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="birth_city">
+                        <xs:complexType>
+                          <xs:simpleContent>
+                            <xs:extension base="xs:unsignedShort">
+                              <xs:attribute name="caps" type="xs:unsignedByte" use="optional" />
+                              <xs:attribute name="caps_u18" type="xs:unsignedByte" use="optional" />
+                              <xs:attribute name="caps_u21" type="xs:unsignedByte" use="optional" />
+                              <xs:attribute name="goals" type="xs:unsignedByte" use="optional" />
+                              <xs:attribute name="goals_u18" type="xs:unsignedByte" use="optional" />
+                              <xs:attribute name="goals_u21" type="xs:unsignedByte" use="optional" />
+                            </xs:extension>
+                          </xs:simpleContent>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" name="birth_day" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="birth_month" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="birth_year" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="new_birth_day" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="new_birth_year" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="nationality" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="injured">
+                        <xs:complexType>
+                          <xs:simpleContent>
+                            <xs:extension base="xs:unsignedByte">
+                              <xs:attribute name="games" type="xs:unsignedByte" use="optional" />
+                            </xs:extension>
+                          </xs:simpleContent>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" name="suspended">
+                        <xs:complexType>
+                          <xs:simpleContent>
+                            <xs:extension base="xs:unsignedByte">
+                              <xs:attribute name="games" type="xs:unsignedByte" use="optional" />
+                            </xs:extension>
+                          </xs:simpleContent>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" name="suspended_int">
+                        <xs:complexType>
+                          <xs:simpleContent>
+                            <xs:extension base="xs:unsignedByte">
+                              <xs:attribute name="games" type="xs:unsignedByte" use="optional" />
+                            </xs:extension>
+                          </xs:simpleContent>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" name="fitness" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="morale" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" maxOccurs="unbounded" name="future">
+                        <xs:complexType>
+                          <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                              <xs:attribute name="id" type="xs:unsignedByte" use="optional" />
+                            </xs:extension>
+                          </xs:simpleContent>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" name="adapt" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="adaptabilities">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element minOccurs="0" maxOccurs="unbounded" name="adaptability">
+                              <xs:complexType>
+                                <xs:simpleContent>
+                                  <xs:extension base="xs:string">
+                                    <xs:attribute name="active" type="xs:unsignedByte" use="optional" />
+                                    <xs:attribute name="country" type="xs:unsignedShort" use="optional" />
+                                    <xs:attribute name="days" type="xs:unsignedShort" use="optional" />
+                                  </xs:extension>
+                                </xs:simpleContent>
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" name="confidence">
+                        <xs:complexType>
+                          <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                              <xs:attribute name="id" type="xs:unsignedByte" use="optional" />
+                            </xs:extension>
+                          </xs:simpleContent>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" name="favorite_foot" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="int_rank" type="xs:unsignedShort" />
+                      <xs:element minOccurs="0" name="nat_rank" type="xs:unsignedShort" />
+                      <xs:element minOccurs="0" name="handling" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="out_of_area" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="reflexes" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="agility" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="tackling" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="heading" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="short_passes" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="positioning" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="finishing" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="technique" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="speed" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="strength" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="throwing" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="game_vision" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="long_passes" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="crosses" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="long_shots" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="dribbling" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="jumping" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="acceleration" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="marking" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="set_pieces" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="first_touch" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="command_of_area" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="consistency" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="flair" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="concentration" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="anticipation" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="decisions" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="composure" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="bravery" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="creativity" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="influence" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="skills_week" type="xs:string" />
+                      <xs:element minOccurs="0" name="talents">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element minOccurs="0" maxOccurs="unbounded" name="talent">
+                              <xs:complexType>
+                                <xs:simpleContent>
+                                  <xs:extension base="xs:string">
+                                    <xs:attribute name="id" type="xs:unsignedByte" use="optional" />
+                                  </xs:extension>
+                                </xs:simpleContent>
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" name="experience">
+                        <xs:complexType>
+                          <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                              <xs:attribute name="level" type="xs:unsignedByte" use="optional" />
+                            </xs:extension>
+                          </xs:simpleContent>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" name="value">
+                        <xs:complexType>
+                          <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                              <xs:attribute name="EUR" type="xs:unsignedInt" use="optional" />
+                            </xs:extension>
+                          </xs:simpleContent>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" name="wage">
+                        <xs:complexType>
+                          <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                              <xs:attribute name="EUR" type="xs:unsignedShort" use="optional" />
+                            </xs:extension>
+                          </xs:simpleContent>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" name="contract" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="contract_role" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="last_contract_date" type="xs:string" />
+                      <xs:element minOccurs="0" name="youth_team" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="transfer_list" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="release" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="loan_list" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="loan_from" type="xs:unsignedShort" />
+                      <xs:element minOccurs="0" name="loan_to" type="xs:unsignedShort" />
+                      <xs:element minOccurs="0" name="loan_return_date" type="xs:string" />
+                      <xs:element minOccurs="0" name="last_training" type="xs:byte" />
+                      <xs:element minOccurs="0" name="date_last_training" type="xs:string" />
+                      <xs:element minOccurs="0" name="weekly_training">
+                        <xs:complexType mixed="true">
+                          <xs:sequence minOccurs="0">
+                            <xs:element minOccurs="0" name="Monday1" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Monday2" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Monday3" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Tuesday1" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Tuesday2" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Tuesday3" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Wednesday1" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Wednesday2" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Wednesday3" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Thursday1" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Thursday2" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Thursday3" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Friday1" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Friday2" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Friday3" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Saturday1" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Saturday2" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Saturday3" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Sunday1" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Sunday2" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="Sunday3" type="xs:unsignedByte" />
+                            <xs:element minOccurs="0" name="last_changed" type="xs:string" />
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" name="double_nat">
+                        <xs:complexType mixed="true">
+                          <xs:sequence minOccurs="0">
+                            <xs:element minOccurs="0" maxOccurs="unbounded" name="country" type="xs:unsignedShort" />
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" name="country_nt" type="xs:unsignedShort" />
+                      <xs:element minOccurs="0" name="nt_squad" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="goals" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="goals_career" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="assists" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="assists_career" type="xs:unsignedShort" />
+                      <xs:element minOccurs="0" name="national_teams">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element minOccurs="0" maxOccurs="unbounded" name="country">
+                              <xs:complexType>
+                                <xs:attribute name="assists_nt" type="xs:unsignedByte" use="optional" />
+                                <xs:attribute name="caps" type="xs:unsignedByte" use="optional" />
+                                <xs:attribute name="caps_sub18" type="xs:unsignedByte" use="optional" />
+                                <xs:attribute name="caps_sub21" type="xs:unsignedByte" use="optional" />
+                                <xs:attribute name="goals" type="xs:unsignedByte" use="optional" />
+                                <xs:attribute name="goals_sub18" type="xs:unsignedByte" use="optional" />
+                                <xs:attribute name="goals_sub21" type="xs:unsignedByte" use="optional" />
+                                <xs:attribute name="id" type="xs:unsignedShort" use="optional" />
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:choice>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
