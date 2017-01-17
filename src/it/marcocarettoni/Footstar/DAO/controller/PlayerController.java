@@ -38,7 +38,7 @@ public class PlayerController extends DAOController {
 		}
 	}
 
-	private void addRow(Connection c, PlayerDAO ob) throws SQLException {
+	public void addRow(Connection c, PlayerDAO ob) throws SQLException {
 		PreparedStatement s = null;
 		try {
 			s = c.prepareStatement(" INSERT INTO " + table_name + " ( " +

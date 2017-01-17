@@ -18,7 +18,6 @@ public class GameXMLController extends XMLIController {
 		super(GameXMLController.class);
 	}
 
-	@Override
 	protected void parseDati(Connection c, DBDataDAO dbData) throws SQLException {
 		int inizio = dbData.getMIN_TEAM_ID();
 		int fine = dbData.getMAX_TEAM_ID();

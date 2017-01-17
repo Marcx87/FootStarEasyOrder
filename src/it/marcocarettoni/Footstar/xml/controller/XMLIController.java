@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -40,39 +41,15 @@ public abstract class XMLIController {
 
 	protected final Logger logger;
 
-	public static void main(String[] args) {
-		Connection c = null;
-		try {
-			c = DB.dbConnect();
-			if (DB.setAutoCommit(c, false)) {
-
-				//				emptyTables(c);
-				//				
-				//				new DenominazioniXMLController().parseDati(c, null);							
-				//				DB.commit(c);
-				//				
-				DBDataDAO dbdata = new DBDataController().getRow();
-				//				new GameXMLController().parseDati(c, dbdata);
-				//				DB.commit(c);
-				//				new TeamXMLController().parseDati(c, dbdata);
-				new PlayerXMLController().parseDati(c, dbdata);
-				DB.commit(c);
-			}
-			DB.commit(c);
-		} catch (SQLException e) {
-			DB.rollback(c);
-			e.printStackTrace();
-		} finally {
-			DB.closeResource(c);
-		}
-	}
-
-	public XMLIController(Class<?> clz) {
+	protected XMLIController(Class<?> clz) {
 		logger = Logger.getLogger(clz);
 	}
 
-	protected abstract void parseDati(Connection c, DBDataDAO dbData) throws SQLException;
-
+	//protected abstract void parseDati(Connection c, DBDataDAO dbData) throws SQLException;
+	//protected abstract void getSoapDati();
+	//protected abstract void processDB(Connection c);
+	
+	
 	private static void emptyTables(Connection c) throws SQLException {
 		new CityController().emptyTable(c);
 		new CountryController().emptyTable(c);

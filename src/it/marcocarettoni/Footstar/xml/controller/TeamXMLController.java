@@ -19,7 +19,6 @@ public class TeamXMLController extends XMLIController {
 		super(TeamXMLController.class);
 	}
 
-	@Override
 	protected void parseDati(Connection c, DBDataDAO dbData) throws SQLException {
 		int inizio = 2601; //dbData.getMIN_TEAM_ID();
 		int fine = dbData.getMAX_TEAM_ID();
