@@ -55,7 +55,7 @@ public abstract class XMLIController {
 				//				new GameXMLController().parseDati(c, dbdata);
 				//				DB.commit(c);
 				//				new TeamXMLController().parseDati(c, dbdata);
-
+				new PlayerXMLController().parseDati(c, dbdata);
 				DB.commit(c);
 			}
 			DB.commit(c);
@@ -101,8 +101,8 @@ public abstract class XMLIController {
 			String result = "";
 			while ((line = br.readLine()) != null) {
 				result += line + "\n";
-			}
-			return result;
+			}			
+			return result = result.replace(",", ".");
 		} catch (IOException e) {
 			throw e;
 		} finally {

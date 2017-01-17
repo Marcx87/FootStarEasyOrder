@@ -4048,7 +4048,7 @@ public class Player {
         @XmlSchemaType(name = "unsignedByte")
         protected short value;
         @XmlAttribute(name = "per")
-        protected Short per;
+        protected String per;
 
         /**
          * Gets the value of the value property.
@@ -4074,7 +4074,7 @@ public class Player {
          *     {@link String }
          *     
          */
-        public Short getPer() {
+        public String getPer() {
             return per;
         }
 
@@ -4086,7 +4086,7 @@ public class Player {
          *     {@link String }
          *     
          */
-        public void setPer(Short value) {
+        public void setPer(String value) {
             this.per = value;
         }
 
@@ -4121,7 +4121,7 @@ public class Player {
         protected short value;
         @XmlAttribute(name = "per")
         @XmlSchemaType(name = "unsignedByte")
-        protected Short per;
+        protected String per;
 
         /**
          * Gets the value of the value property.
@@ -4147,7 +4147,7 @@ public class Player {
          *     {@link Short }
          *     
          */
-        public Short getPer() {
+        public String getPer() {
             return per;
         }
 
@@ -4159,7 +4159,7 @@ public class Player {
          *     {@link Short }
          *     
          */
-        public void setPer(Short value) {
+        public void setPer(String value) {
             this.per = value;
         }
 
@@ -4194,7 +4194,7 @@ public class Player {
         protected short value;
         @XmlAttribute(name = "per")
         @XmlSchemaType(name = "unsignedByte")
-        protected Short per;
+        protected String per;
 
         /**
          * Gets the value of the value property.
@@ -4220,7 +4220,7 @@ public class Player {
          *     {@link Short }
          *     
          */
-        public Short getPer() {
+        public String getPer() {
             return per;
         }
 
@@ -4232,7 +4232,7 @@ public class Player {
          *     {@link Short }
          *     
          */
-        public void setPer(Short value) {
+        public void setPer(String value) {
             this.per = value;
         }
 

@@ -23,9 +23,9 @@ public class PlayerDAO extends IDAO {
 	private String playerName;
 	private String positionFull;
 	private Short position;
-	private Short sideLeft;
-	private Short sideRight;
-	private Short sideCenter;
+	private Double sideLeft;
+	private Double sideRight;
+	private Double sideCenter;
 	private Short age;
 	private Short birthCity;
 	private Short birthCity_caps;
@@ -134,9 +134,9 @@ public class PlayerDAO extends IDAO {
 		playerName = rs.getString("playerName");
 		positionFull = rs.getString("positionFull");
 		position = rs.getShort("position");
-		sideLeft = rs.getShort("sideLeft");
-		sideRight = rs.getShort("sideRight");
-		sideCenter = rs.getShort("sideCenter");
+		sideLeft = rs.getDouble("sideLeft");
+		sideRight = rs.getDouble("sideRight");
+		sideCenter = rs.getDouble("sideCenter");
 		age = rs.getShort("age");
 		birthCity = rs.getShort("birthCity");
 		birthCity_caps = rs.getShort("birthCity_caps");
@@ -225,100 +225,100 @@ public class PlayerDAO extends IDAO {
 
 	public void setByXML(Player cy) {
 		playerId = cy.getPlayerId();
-		userId = cy.getUserId();
-		lastLogin = cy.getLastLogin();
-		registrationDate = cy.getRegistrationDate();
-		teamId = cy.getTeamId();
-		teamName = cy.getTeamName();
-		playerName = cy.getPlayerName();
-		positionFull = cy.getPositionFull();
-		position = cy.getPosition().getValueAttribute();
-		sideLeft = cy.getSideLeft().getPer();
-		sideRight = cy.getSideRight().getPer();
-		sideCenter = cy.getSideCenter().getPer();
-		age = cy.getAge();
+		userId = (cy.getUserId() == null ? -1 : cy.getUserId());
+		lastLogin = (cy.getLastLogin() == null ? "" : cy.getLastLogin());
+		registrationDate = (cy.getRegistrationDate() == null ? "" : cy.getRegistrationDate());
+		teamId = (cy.getTeamId() == null ? -1 : cy.getTeamId());
+		teamName = (cy.getTeamName() == null ? "" : cy.getTeamName());
+		playerName = (cy.getPlayerName() == null ? "" : cy.getPlayerName());
+		positionFull = (cy.getPositionFull() == null ? "" : cy.getPositionFull());
+		position = (cy.getPosition().getValueAttribute() == null ? -1 : cy.getPosition().getValueAttribute());
+		sideLeft = (cy.getSideLeft().getPer() == null ? -1 : Double.parseDouble(cy.getSideLeft().getPer()));
+		sideRight = (cy.getSideRight().getPer() == null ? -1 : Double.parseDouble(cy.getSideRight().getPer()));
+		sideCenter = (cy.getSideCenter().getPer() == null ? -1 : Double.parseDouble(cy.getSideCenter().getPer()));
+		age = (cy.getAge() == null ? -1 : cy.getAge());
 		birthCity = cy.getBirthCity().getValue();
-		birthCity_caps = cy.getBirthCity().getCaps();
-		birthCity_capsU21 = cy.getBirthCity().getCapsU21();
-		birthCity_capsU18 = cy.getBirthCity().getCapsU18();
-		birthCity_goals = cy.getBirthCity().getGoals();
-		birthCity_goalsU21 = cy.getBirthCity().getGoalsU21();
-		birthCity_goalsU18 = cy.getBirthCity().getGoalsU18();
-		birthDay = cy.getBirthDay();
-		birthMonth = cy.getBirthMonth();
-		birthYear = cy.getBirthYear();
-		newBirthDay = cy.getNewBirthDay();
-		newBirthYear = cy.getNewBirthYear();
-		nationality = cy.getNationality();
+		birthCity_caps = (cy.getBirthCity().getCaps() == null ? -1 : cy.getBirthCity().getCaps());
+		birthCity_capsU21 = (cy.getBirthCity().getCapsU21() == null ? -1 : cy.getBirthCity().getCapsU21());
+		birthCity_capsU18 = (cy.getBirthCity().getCapsU18() == null ? -1 : cy.getBirthCity().getCapsU18());
+		birthCity_goals = (cy.getBirthCity().getGoals() == null ? -1 : cy.getBirthCity().getGoals());
+		birthCity_goalsU21 = (cy.getBirthCity().getGoalsU21() == null ? -1 : cy.getBirthCity().getGoalsU21());
+		birthCity_goalsU18 = (cy.getBirthCity().getGoalsU18() == null ? -1 : cy.getBirthCity().getGoalsU18());
+		birthDay = (cy.getBirthDay() == null ? -1 : cy.getBirthDay());
+		birthMonth = (cy.getBirthMonth() == null ? -1 : cy.getBirthMonth());
+		birthYear = (cy.getBirthYear() == null ? -1 : cy.getBirthYear());
+		newBirthDay = (cy.getNewBirthDay() == null ? -1 : cy.getNewBirthDay());
+		newBirthYear = (cy.getNewBirthYear() == null ? -1 : cy.getNewBirthYear());
+		nationality = (cy.getNationality() == null ? -1 : cy.getNationality());
 		injured = cy.getInjured().getValue();
-		injured_games = cy.getInjured().getGames();
+		injured_games = (cy.getInjured().getGames() == null ? -1 : cy.getInjured().getGames());
 		suspended = cy.getSuspended().getValue();
-		suspended_games = cy.getSuspended().getGames();
-		suspendedInt = cy.getSuspendedInt().getValue();
-		suspendedInt_games = cy.getSuspendedInt().getGames();
-		fitness = cy.getFitness();
-		morale = cy.getMorale();
-		adapt = cy.getAdapt();
-		confidence = cy.getConfidence().getId();
-		favoriteFoot = cy.getFavoriteFoot();
-		intRank = cy.getIntRank();
-		natRank = cy.getNatRank();
-		handling = cy.getHandling();
-		outOfArea = cy.getOutOfArea();
-		reflexes = cy.getReflexes();
-		agility = cy.getAgility();
-		tackling = cy.getTackling();
-		heading = cy.getHeading();
-		shortPasses = cy.getShortPasses();
-		positioning = cy.getPositioning();
-		finishing = cy.getFinishing();
-		technique = cy.getTechnique();
-		speed = cy.getSpeed();
-		strength = cy.getStrength();
-		throwing = cy.getThrowing();
-		gameVision = cy.getGameVision();
-		longPasses = cy.getLongPasses();
-		crosses = cy.getCrosses();
-		longShots = cy.getLongShots();
-		dribbling = cy.getDribbling();
-		jumping = cy.getJumping();
-		acceleration = cy.getAcceleration();
-		marking = cy.getMarking();
-		setPieces = cy.getSetPieces();
-		firstTouch = cy.getFirstTouch();
-		commandOfArea = cy.getCommandOfArea();
-		consistency = cy.getConsistency();
-		flair = cy.getFlair();
-		concentration = cy.getConcentration();
-		anticipation = cy.getAnticipation();
-		decisions = cy.getDecisions();
-		composure = cy.getComposure();
-		bravery = cy.getBravery();
-		creativity = cy.getCreativity();
-		influence = cy.getInfluence();
-		skillsWeek = cy.getSkillsWeek();
-		experience = cy.getExperience().getLevel();
-		value = cy.getValue().getEUR();
-		wage = cy.getWage().getEUR();
-		contract = cy.getContract();
-		contractRole = cy.getContractRole();
-		lastContractDate = cy.getLastContractDate();
-		youthTeam = cy.getYouthTeam();
-		transferList = cy.getTransferList();
-		release = cy.getRelease();
-		loanList = cy.getLoanList();
-		loanFrom = cy.getLoanFrom();
-		loanTo = cy.getLoanTo();
-		loanReturnDate = cy.getLoanReturnDate();
-		lastTraining = cy.getLastTraining();
-		dateLastTraining = cy.getDateLastTraining();
-		doubleNat = cy.getDoubleNat().getCountry();
-		countryNt = cy.getCountryNt();
-		ntSquad = cy.getNtSquad();
-		goals = cy.getGoals();
-		goalsCareer = cy.getGoalsCareer();
-		assists = cy.getAssists();
-		assistsCareer = cy.getAssistsCareer();
+		suspended_games = (cy.getSuspended().getGames() == null ? -1 : cy.getSuspended().getGames());
+		suspendedInt =  cy.getSuspendedInt().getValue();
+		suspendedInt_games = (cy.getSuspendedInt().getGames() == null ? -1 : cy.getSuspendedInt().getGames());
+		fitness = (cy.getFitness() == null ? -1 : cy.getFitness());
+		morale = (cy.getMorale() == null ? -1 : cy.getMorale());
+		adapt = (cy.getAdapt() == null ? -1 : cy.getAdapt());
+		confidence = (cy.getConfidence().getId() == null ? -1 : cy.getConfidence().getId());
+		favoriteFoot = (cy.getFavoriteFoot() == null ? -1 : cy.getFavoriteFoot());
+		intRank = (cy.getIntRank() == null ? -1 : cy.getIntRank());
+		natRank = (cy.getNatRank() == null ? -1 : cy.getNatRank());
+		handling = (cy.getHandling() == null ? -1 : cy.getHandling());
+		outOfArea = (cy.getOutOfArea() == null ? -1 : cy.getOutOfArea());
+		reflexes = (cy.getReflexes() == null ? -1 : cy.getReflexes());
+		agility = (cy.getAgility() == null ? -1 : cy.getAgility());
+		tackling = (cy.getTackling() == null ? -1 : cy.getTackling());
+		heading = (cy.getHeading() == null ? -1 : cy.getHeading());
+		shortPasses = (cy.getShortPasses() == null ? -1 : cy.getShortPasses());
+		positioning = (cy.getPositioning() == null ? -1 : cy.getPositioning());
+		finishing = (cy.getFinishing() == null ? -1 : cy.getFinishing());
+		technique = (cy.getTechnique() == null ? -1 : cy.getTechnique());
+		speed = (cy.getSpeed() == null ? -1 : cy.getSpeed());
+		strength = (cy.getStrength() == null ? -1 : cy.getStrength());
+		throwing = (cy.getThrowing() == null ? -1 : cy.getThrowing());
+		gameVision = (cy.getGameVision() == null ? -1 : cy.getGameVision());
+		longPasses = (cy.getLongPasses() == null ? -1 : cy.getLongPasses());
+		crosses = (cy.getCrosses() == null ? -1 : cy.getCrosses());
+		longShots = (cy.getLongShots() == null ? -1 : cy.getLongShots());
+		dribbling = (cy.getDribbling() == null ? -1 : cy.getDribbling());
+		jumping = (cy.getJumping() == null ? -1 : cy.getJumping());
+		acceleration = (cy.getAcceleration() == null ? -1 : cy.getAcceleration());
+		marking = (cy.getMarking() == null ? -1 : cy.getMarking());
+		setPieces = (cy.getSetPieces() == null ? -1 : cy.getSetPieces());
+		firstTouch = (cy.getFirstTouch() == null ? -1 : cy.getFirstTouch());
+		commandOfArea = (cy.getCommandOfArea() == null ? -1 : cy.getCommandOfArea());
+		consistency = (cy.getConsistency() == null ? -1 : cy.getConsistency());
+		flair = (cy.getFlair() == null ? -1 : cy.getFlair());
+		concentration = (cy.getConcentration() == null ? -1 : cy.getConcentration());
+		anticipation = (cy.getAnticipation() == null ? -1 : cy.getAnticipation());
+		decisions = (cy.getDecisions() == null ? -1 : cy.getDecisions());
+		composure = (cy.getComposure() == null ? -1 : cy.getComposure());
+		bravery = (cy.getBravery() == null ? -1 : cy.getBravery());
+		creativity = (cy.getCreativity() == null ? -1 : cy.getCreativity());
+		influence = (cy.getInfluence() == null ? -1 : cy.getInfluence());
+		skillsWeek = (cy.getSkillsWeek() == null ? "" : cy.getSkillsWeek());
+		experience = (cy.getExperience().getLevel() == null ? -1 : cy.getExperience().getLevel());
+		value = (cy.getValue().getEUR() == null ? -1 : cy.getValue().getEUR());
+		wage = (cy.getWage().getEUR() == null ? -1 : cy.getWage().getEUR());
+		contract = (cy.getContract() == null ? -1 : cy.getContract());
+		contractRole = (cy.getContractRole() == null ? -1 : cy.getContractRole());
+		lastContractDate = (cy.getLastContractDate() == null ? "" : cy.getLastContractDate());
+		youthTeam = (cy.getYouthTeam() == null ? -1 : cy.getYouthTeam());
+		transferList = (cy.getTransferList() == null ? -1 : cy.getTransferList());
+		release = (cy.getRelease() == null ? -1 : cy.getRelease());
+		loanList = (cy.getLoanList() == null ? -1 : cy.getLoanList());
+		loanFrom = (cy.getLoanFrom() == null ? -1 : cy.getLoanFrom());
+		loanTo = (cy.getLoanTo() == null ? -1 : cy.getLoanTo());
+		loanReturnDate = (cy.getLoanReturnDate() == null ? -1 : cy.getLoanReturnDate());
+		lastTraining = (cy.getLastTraining() == null ? -1 : cy.getLastTraining());
+		dateLastTraining = (cy.getDateLastTraining() == null ? "" : cy.getDateLastTraining());
+		doubleNat = (cy.getDoubleNat().getCountry() == null ? -1 : cy.getDoubleNat().getCountry());
+		countryNt = (cy.getCountryNt() == null ? -1 : cy.getCountryNt());
+		ntSquad = (cy.getNtSquad() == null ? -1 : cy.getNtSquad());
+		goals = (cy.getGoals() == null ? -1 : cy.getGoals());
+		goalsCareer = (cy.getGoalsCareer() == null ? -1 : cy.getGoalsCareer());
+		assists = (cy.getAssists() == null ? -1 : cy.getAssists());
+		assistsCareer = (cy.getAssistsCareer() == null ? -1 : cy.getAssistsCareer());
 
 		adaptabilities = new ArrayList<PlayerAdaptabilityDAO>();
 
@@ -406,27 +406,27 @@ public class PlayerDAO extends IDAO {
 		this.position = position;
 	}
 
-	public Short getSideLeft() {
+	public Double getSideLeft() {
 		return sideLeft;
 	}
 
-	public void setSideLeft(Short sideLeft) {
+	public void setSideLeft(Double sideLeft) {
 		this.sideLeft = sideLeft;
 	}
 
-	public Short getSideRight() {
+	public Double getSideRight() {
 		return sideRight;
 	}
 
-	public void setSideRight(Short sideRight) {
+	public void setSideRight(Double sideRight) {
 		this.sideRight = sideRight;
 	}
 
-	public Short getSideCenter() {
+	public Double getSideCenter() {
 		return sideCenter;
 	}
 
-	public void setSideCenter(Short sideCenter) {
+	public void setSideCenter(Double sideCenter) {
 		this.sideCenter = sideCenter;
 	}
 
