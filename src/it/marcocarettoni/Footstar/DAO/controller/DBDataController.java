@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 import it.marcocarettoni.Footstar.DAO.DataPool.DB;
 import it.marcocarettoni.Footstar.DAO.model.DBDataDAO;
+import it.marcocarettoni.Footstar.DAO.model.IModelDAO;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.DatabaseData;
 
 public class DBDataController extends DAOController {
@@ -45,7 +46,8 @@ public class DBDataController extends DAOController {
 		throw new SQLException("No DBData Configuration found!");
 	}
 
-	private void addRow(Connection c, DBDataDAO city) throws SQLException {
+	public void addRow(Connection c, IModelDAO ob) throws SQLException {
+		DBDataDAO city = (DBDataDAO) ob;
 		PreparedStatement s = null;
 		try {
 			s = c.prepareStatement(" INSERT INTO " + table_name + " ( " +

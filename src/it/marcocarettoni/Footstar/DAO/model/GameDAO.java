@@ -3,9 +3,10 @@ package it.marcocarettoni.Footstar.DAO.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 import it.marcocarettoni.Footstar.xml.model.game.Data.Game;
 
-public class GameDAO {
+public class GameDAO extends IDAO {
 
 	public static final String table_name = "D_GAME_TEAM";
 	
@@ -52,7 +53,9 @@ public class GameDAO {
 		awayGoals = rs.getInt("awayGoals");
 	}
 
-	public void setByXML(Game cy) {
+	@Override
+	protected void setByXML(IModelXML cyz) {
+		Game cy = (Game) cyz;
 		matchId = cy.getMatchId();
 		data_m = cy.getDate();
 		season = cy.getSeason();
@@ -69,6 +72,8 @@ public class GameDAO {
 		awayGoals = cy.getAwayGoals();
 	}
 
+	@Override
+	protected void setByXML(IModelXML cy, int xx) {}
 
 	public long getMatchId() {
 		return matchId;

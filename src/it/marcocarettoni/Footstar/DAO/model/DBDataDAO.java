@@ -3,6 +3,7 @@ package it.marcocarettoni.Footstar.DAO.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.DatabaseData;
 
 public class DBDataDAO extends IDAO {
@@ -34,7 +35,12 @@ public class DBDataDAO extends IDAO {
 		IDL = rs.getInt("IDL");
 	}
 
-	public void setByXML(DatabaseData cy, int language) {
+	@Override
+	protected void setByXML(IModelXML cyx){}
+	
+	@Override
+	protected void setByXML(IModelXML cyz, int language) {
+		DatabaseData cy = (DatabaseData) cyz;
 		MIN_PLAYER_ID = cy.getMinPlayerId();
 		MAX_PLAYER_ID = cy.getMaxPlayerId();
 		MIN_TEAM_ID = cy.getMinTeamId();

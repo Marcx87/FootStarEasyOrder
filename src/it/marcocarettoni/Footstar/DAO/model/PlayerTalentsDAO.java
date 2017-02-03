@@ -3,6 +3,7 @@ package it.marcocarettoni.Footstar.DAO.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 import it.marcocarettoni.Footstar.xml.model.player.Player.Talents.Talent;
 
 public class PlayerTalentsDAO extends IDAO {
@@ -19,8 +20,8 @@ public class PlayerTalentsDAO extends IDAO {
 		setByResultSet(rs);
 	}
 
-	public PlayerTalentsDAO(Integer _playerid, Talent cy) {
-		setByXML(_playerid, cy);
+	public PlayerTalentsDAO(Talent cy, Integer _playerid) {
+		setByXML(cy, _playerid);
 	}
 
 	public void setByResultSet(ResultSet rs) throws SQLException {
@@ -28,7 +29,12 @@ public class PlayerTalentsDAO extends IDAO {
 		id = rs.getShort("id");
 	}
 
-	public void setByXML(Integer _playerid, Talent cy) {
+	@Override
+	protected void setByXML(IModelXML cyz) {}
+	
+	@Override
+	protected void setByXML(IModelXML cyz, int _playerid) {
+		Talent cy = (Talent) cyz;
 		playerId = _playerid;
 		id = cy.getId();
 	}

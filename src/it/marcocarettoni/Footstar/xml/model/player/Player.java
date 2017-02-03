@@ -10,6 +10,7 @@ package it.marcocarettoni.Footstar.xml.model.player;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -18,6 +19,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
+
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 
 
 /**
@@ -437,7 +440,7 @@ import javax.xml.bind.annotation.XmlValue;
     "nationalTeams"
 })
 @XmlRootElement(name = "player")
-public class Player {
+public class Player implements IModelXML {
 
     @XmlElement(name = "player_id")
     @XmlSchemaType(name = "unsignedShort")
@@ -2923,7 +2926,7 @@ public class Player {
         @XmlType(name = "", propOrder = {
             "value"
         })
-        public static class Adaptability {
+        public static class Adaptability implements IModelXML {
 
             @XmlValue
             protected String value;
@@ -3032,6 +3035,11 @@ public class Player {
             public void setDays(Integer value) {
                 this.days = value;
             }
+
+			@Override
+			public Long getIDRow() {
+				return getCountry() != null ? new Long(getCountry()) : 0L;
+			}
 
         }
 
@@ -3717,7 +3725,7 @@ public class Player {
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "")
-        public static class Country {
+        public static class Country implements IModelXML {
 
             @XmlAttribute(name = "id")
             @XmlSchemaType(name = "unsignedByte")
@@ -3935,6 +3943,11 @@ public class Player {
             public void setAssistsNt(Short value) {
                 this.assistsNt = value;
             }
+
+			@Override
+			public Long getIDRow() {
+				return getId() != null ? new Long(getId()) : 0L;
+			}
 
         }
 
@@ -4471,7 +4484,7 @@ public class Player {
         @XmlType(name = "", propOrder = {
             "value"
         })
-        public static class Talent {
+        public static class Talent implements IModelXML {
 
             @XmlValue
             protected String value;
@@ -4526,6 +4539,11 @@ public class Player {
             public void setId(Short value) {
                 this.id = value;
             }
+
+			@Override
+			public Long getIDRow() {
+				return getId() != null ? new Long(getId()) : 0L;
+			}
 
         }
 
@@ -5352,7 +5370,12 @@ public class Player {
         public void setLastChanged(String value) {
             this.lastChanged = value;
         }
-
     }
+
+
+	@Override
+	public Long getIDRow() {
+		return getPlayerId() != null ? new Long(getPlayerId()) : 0L;
+	}
 
 }

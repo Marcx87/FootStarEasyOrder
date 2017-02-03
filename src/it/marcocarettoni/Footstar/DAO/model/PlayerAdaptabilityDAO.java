@@ -3,6 +3,7 @@ package it.marcocarettoni.Footstar.DAO.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 import it.marcocarettoni.Footstar.xml.model.player.Player.Adaptabilities.Adaptability;
 
 public class PlayerAdaptabilityDAO extends IDAO {
@@ -22,8 +23,8 @@ public class PlayerAdaptabilityDAO extends IDAO {
 		setByResultSet(rs);
 	}
 
-	public PlayerAdaptabilityDAO(Integer _playerid, Adaptability cy) {
-		setByXML(_playerid, cy);
+	public PlayerAdaptabilityDAO(Adaptability cy, Integer _playerid) {
+		setByXML(cy, _playerid);
 	}
 
 	public void setByResultSet(ResultSet rs) throws SQLException {
@@ -34,7 +35,13 @@ public class PlayerAdaptabilityDAO extends IDAO {
 		days = rs.getInt("days");
 	}
 
-	public void setByXML(Integer _playerid, Adaptability cy) {
+	@Override
+	protected void setByXML(IModelXML cyz) {
+	}
+
+	@Override
+	protected void setByXML(IModelXML cyz, int _playerid) {
+		Adaptability cy = (Adaptability) cyz;
 		playerId = _playerid;
 		value = cy.getValue();
 		country = cy.getCountry();
@@ -81,5 +88,4 @@ public class PlayerAdaptabilityDAO extends IDAO {
 	public void setDays(Integer days) {
 		this.days = days;
 	}
-
 }

@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import it.marcocarettoni.Footstar.DAO.DataPool.DB;
 import it.marcocarettoni.Footstar.DAO.model.ExperienceDAO;
+import it.marcocarettoni.Footstar.DAO.model.IModelDAO;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.PlayerExperience;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.PlayerExperience.ExpItem;
 
@@ -21,7 +22,8 @@ public class ExperienceController extends DAOController {
 		}
 	}
 
-	private void addRow(Connection c, ExperienceDAO city) throws SQLException {
+	public void addRow(Connection c, IModelDAO ob) throws SQLException {
+		ExperienceDAO city = (ExperienceDAO) ob;
 		PreparedStatement s = null;
 		try {
 			s = c.prepareStatement(" INSERT INTO " + table_name + " ( " +

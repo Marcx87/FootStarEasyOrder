@@ -3,6 +3,7 @@ package it.marcocarettoni.Footstar.DAO.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.Countries.Country;
 
 public class CountryDAO extends IDAO {
@@ -32,7 +33,13 @@ public class CountryDAO extends IDAO {
 		DESCR = rs.getString("DESCR");
 	}
 
-	public void setByXML(Country cy, int language) {
+	@Override
+	protected void setByXML(IModelXML cyx){}
+	
+	@Override
+	protected void setByXML(IModelXML cyz, int language) {
+		Country cy = (Country) cyz;
+		
 		ID = cy.getId();
 		IDL = language;
 		NUM_DIV = cy.getNumDivs();

@@ -3,6 +3,7 @@ package it.marcocarettoni.Footstar.DAO.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.Sides.Side;
 
 public class SideDAO extends IDAO {
@@ -29,8 +30,12 @@ public class SideDAO extends IDAO {
 		IDL = rs.getInt("IDL");
 		DESCR = rs.getString("DESCR");
 	}
-
-	public void setByXML(Side cy, int language) {
+	@Override
+	protected void setByXML(IModelXML cy){}
+	
+	@Override
+	protected void setByXML(IModelXML cyz, int language) {
+		Side cy = (Side) cyz;
 		ID = cy.getId();
 		IDL = language;
 		DESCR = cy.getValue();

@@ -3,6 +3,7 @@ package it.marcocarettoni.Footstar.DAO.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.PlayerExperience.ExpItem;
 
 public class ExperienceDAO extends IDAO {
@@ -30,7 +31,14 @@ public class ExperienceDAO extends IDAO {
 		DESCR = rs.getString("DESCR");
 	}
 	
-	public void setByXML(ExpItem cy, int language) {
+	
+	@Override
+	protected void setByXML(IModelXML cy) {}
+	
+	@Override
+	protected void setByXML(IModelXML cyz, int language) {
+		ExpItem cy = (ExpItem) cyz;
+		
 		ID = cy.getId();
 		IDL = language;
 		DESCR = cy.getValue();

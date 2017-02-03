@@ -8,7 +8,9 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -29,28 +31,34 @@ import it.marcocarettoni.Footstar.DAO.controller.DBDataController;
 import it.marcocarettoni.Footstar.DAO.controller.ExperienceController;
 import it.marcocarettoni.Footstar.DAO.controller.FutureController;
 import it.marcocarettoni.Footstar.DAO.controller.GameController;
+import it.marcocarettoni.Footstar.DAO.controller.IDBController;
 import it.marcocarettoni.Footstar.DAO.controller.LanguageController;
+import it.marcocarettoni.Footstar.DAO.controller.PlayerController;
 import it.marcocarettoni.Footstar.DAO.controller.PositionController;
 import it.marcocarettoni.Footstar.DAO.controller.SideController;
 import it.marcocarettoni.Footstar.DAO.controller.SkillController;
 import it.marcocarettoni.Footstar.DAO.controller.TeamController;
 import it.marcocarettoni.Footstar.DAO.controller.TrainingController;
-import it.marcocarettoni.Footstar.DAO.model.DBDataDAO;
+import it.marcocarettoni.Footstar.DAO.model.IModelDAO;
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 
 public abstract class XMLIController {
 
 	protected final Logger logger;
 
+	public AtomicInteger idx;
+	public boolean parsedToEnd = false;
+	public int end;
+	public List<IModelXML> lista;
+	private ConcurrentHashMap<Long, Long> aggiunti = new ConcurrentHashMap<Long, Long>();
+
 	protected XMLIController(Class<?> clz) {
 		logger = Logger.getLogger(clz);
 	}
 
-	//protected abstract void parseDati(Connection c, DBDataDAO dbData) throws SQLException;
-	//protected abstract void getSoapDati();
-	//protected abstract void processDB(Connection c);
-	
-	
-	private static void emptyTables(Connection c) throws SQLException {
+	public abstract void getSoapDati();
+
+	public static void emptyTables(Connection c) throws SQLException {
 		new CityController().emptyTable(c);
 		new CountryController().emptyTable(c);
 		new DBDataController().emptyTable(c);
@@ -63,7 +71,7 @@ public abstract class XMLIController {
 		new TrainingController().emptyTable(c);
 		new GameController().emptyTable(c);
 		new TeamController().emptyTable(c);
-		DB.commit(c);
+		new PlayerController().emptyTable(c);
 	}
 
 	public String getSOAP(String URL) throws IOException {
@@ -78,7 +86,7 @@ public abstract class XMLIController {
 			String result = "";
 			while ((line = br.readLine()) != null) {
 				result += line + "\n";
-			}			
+			}
 			return result = result.replace(",", ".");
 		} catch (IOException e) {
 			throw e;
@@ -98,7 +106,6 @@ public abstract class XMLIController {
 
 			org.w3c.dom.Element node = doc.getDocumentElement();
 
-			//Data jaxbelement = (Data) jaxbUnmarshaller.unmarshal(node);
 			JAXBElement<?> jaxbelement = (JAXBElement<?>) jaxbUnmarshaller.unmarshal(node, clasz);
 
 			return jaxbelement;
@@ -106,5 +113,43 @@ public abstract class XMLIController {
 			logger.error("Parse SOAP Error: ", e);
 		}
 		return null;
+	}
+
+	public void processDB(Connection c, IDBController pc, Class<?> clsz, String typeAdded)
+	{
+		int rowsAdded = 0;
+		while (!parsedToEnd || lista.size() > 0){
+			try {
+				if (lista.size() > 0)
+				{
+					IModelXML pxml = lista.remove(0);
+					if (pxml.getIDRow() > 0 && !aggiunti.containsKey(pxml.getIDRow()))
+					{
+						IModelDAO pdao = (IModelDAO) clsz.getConstructor(pxml.getClass()).newInstance(new Object[]{pxml});						
+						pc.addRow(c, pdao);
+						
+						aggiunti.put(pxml.getIDRow(), pxml.getIDRow());
+						logger.info("[" + Thread.currentThread().getId() + "] Adding " + typeAdded + ": " + pxml.getIDRow());
+					}
+					else
+					{
+						logger.info("[" + Thread.currentThread().getId() + "] Already Added " + typeAdded + ": " + pxml.getIDRow());
+					}					
+					if (++rowsAdded % 300 == 0)
+					{
+						logger.fatal(typeAdded + " ADD N: " + rowsAdded);
+						DB.commit(c);
+					}
+				}
+				else
+					Thread.sleep(1000);
+			} catch (SQLException e) {			
+				logger.error("SQLException processDB * IDBController: " + pc.getClass().getCanonicalName() + " typeAdded: " + typeAdded, e);
+			} catch (InterruptedException e) {
+				logger.error("InterruptedException processDB * IDBController: " + pc.getClass().getCanonicalName() + " typeAdded: " + typeAdded, e);
+			} catch (Exception e) {
+				logger.error("Exception processDB * IDBController: " + pc.getClass().getCanonicalName() + " typeAdded: " + typeAdded, e);
+			}
+		}
 	}
 }

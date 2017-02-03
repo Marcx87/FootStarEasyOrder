@@ -3,6 +3,7 @@ package it.marcocarettoni.Footstar.DAO.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.Trainings.TrainingItem;
 
 public class TrainingDAO extends IDAO {
@@ -19,7 +20,7 @@ public class TrainingDAO extends IDAO {
 	public TrainingDAO(ResultSet rs) throws SQLException {
 		setByResultSet(rs);
 	}
-	
+
 	public TrainingDAO(TrainingItem cy, int language) {
 		setByXML(cy, language);
 	}
@@ -29,8 +30,13 @@ public class TrainingDAO extends IDAO {
 		IDL = rs.getInt("IDL");
 		DESCR = rs.getString("DESCR");
 	}
-	
-	public void setByXML(TrainingItem cy, int language) {
+
+	@Override
+	protected void setByXML(IModelXML cy) {}
+
+	@Override
+	protected void setByXML(IModelXML cyz, int language) {
+		TrainingItem cy = (TrainingItem) cyz;
 		ID = cy.getId();
 		IDL = language;
 		DESCR = cy.getValue();

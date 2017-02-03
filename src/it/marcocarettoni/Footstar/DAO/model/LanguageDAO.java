@@ -3,6 +3,7 @@ package it.marcocarettoni.Footstar.DAO.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.Languages.LanguageItem;
 
 public class LanguageDAO extends IDAO {
@@ -16,13 +17,15 @@ public class LanguageDAO extends IDAO {
 	public LanguageDAO() {
 	}
 
-	public LanguageDAO(ResultSet rs) throws SQLException {
-		setByResultSet(rs);
-	}
-
 	public LanguageDAO(LanguageItem cy, int language) {
 		setByXML(cy, language);
 	}
+	
+	public LanguageDAO(ResultSet rs) throws SQLException {
+		setByResultSet(rs);
+	}
+	
+	
 	
 	public void setByResultSet(ResultSet rs) throws SQLException {
 		ID = rs.getInt("ID");
@@ -30,7 +33,10 @@ public class LanguageDAO extends IDAO {
 		DESCR = rs.getString("DESCR");
 	}
 	
-	public void setByXML(LanguageItem cy, int language) {
+	protected void setByXML(IModelXML cy) {}
+	
+	protected void setByXML(IModelXML cyz, int language) {
+		LanguageItem cy = (LanguageItem) cyz;
 		ID = cy.getId();
 		IDL = language;
 		DESCR = cy.getValue();

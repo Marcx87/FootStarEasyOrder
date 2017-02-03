@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
 
 import it.marcocarettoni.Footstar.DAO.DataPool.DB;
 
-public abstract class DAOController {
+public abstract class DAOController implements IDBController {
 
 	protected Logger logger;
 	protected String table_name;

@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import it.marcocarettoni.Footstar.DAO.DataPool.DB;
 import it.marcocarettoni.Footstar.DAO.model.CountryDAO;
+import it.marcocarettoni.Footstar.DAO.model.IModelDAO;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.Countries;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.Countries.Country;
 
@@ -21,7 +22,8 @@ public class CountryController extends DAOController {
 		}
 	}
 
-	private void addRow(Connection c, CountryDAO city) throws SQLException {
+	public void addRow(Connection c, IModelDAO ob) throws SQLException {
+		CountryDAO city = (CountryDAO) ob;
 		PreparedStatement s = null;
 		try {
 			s = c.prepareStatement(" INSERT INTO " + table_name + " ( " +

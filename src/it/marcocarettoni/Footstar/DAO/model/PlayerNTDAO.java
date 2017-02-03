@@ -3,6 +3,7 @@ package it.marcocarettoni.Footstar.DAO.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 import it.marcocarettoni.Footstar.xml.model.player.Player.NationalTeams.Country;
 
 public class PlayerNTDAO extends IDAO {
@@ -26,8 +27,8 @@ public class PlayerNTDAO extends IDAO {
 		setByResultSet(rs);
 	}
 
-	public PlayerNTDAO(Integer _playerid, Country cy) {
-		setByXML(_playerid, cy);
+	public PlayerNTDAO(Country cy, Integer _playerid) {
+		setByXML(cy, _playerid);
 	}
 
 	public void setByResultSet(ResultSet rs) throws SQLException {
@@ -42,7 +43,12 @@ public class PlayerNTDAO extends IDAO {
 		assistsNt = rs.getShort("assistsNt");
 	}
 
-	public void setByXML(Integer _playerid, Country cy) {
+	@Override
+	protected void setByXML(IModelXML cy) {}
+	
+	@Override
+	protected void setByXML(IModelXML cyz, int _playerid) {
+		Country cy = (Country) cyz;
 		playerId = _playerid;
 		id = cy.getId();
 		caps = cy.getCaps();

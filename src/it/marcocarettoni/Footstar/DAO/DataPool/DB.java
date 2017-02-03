@@ -41,7 +41,7 @@ public class DB extends Config {
 
 	public static boolean commit(Connection c) {
 		try {
-			logger.debug("Commit changes");
+			logger.debug("Commiting changes");
 			c.commit();
 			return true;
 		} catch (SQLException e) {

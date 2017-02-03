@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import it.marcocarettoni.Footstar.DAO.DataPool.DB;
+import it.marcocarettoni.Footstar.DAO.model.IModelDAO;
 import it.marcocarettoni.Footstar.DAO.model.LanguageDAO;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.Languages;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.Languages.LanguageItem;
@@ -21,7 +22,8 @@ public class LanguageController extends DAOController {
 		}
 	}
 
-	private void addRow(Connection c, LanguageDAO city) throws SQLException {
+	public void addRow(Connection c, IModelDAO ob) throws SQLException {
+		LanguageDAO city = (LanguageDAO) ob;
 		PreparedStatement s = null;
 		try {
 			s = c.prepareStatement(" INSERT INTO " + table_name + " ( " +

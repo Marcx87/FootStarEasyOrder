@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import it.marcocarettoni.Footstar.DAO.DataPool.DB;
 import it.marcocarettoni.Footstar.DAO.model.FutureDAO;
+import it.marcocarettoni.Footstar.DAO.model.IModelDAO;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.Future;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.Future.Future2;
 
@@ -21,7 +22,8 @@ public class FutureController extends DAOController {
 		}
 	}
 
-	private void addRow(Connection c, FutureDAO city) throws SQLException {
+	public void addRow(Connection c, IModelDAO ob) throws SQLException {
+		FutureDAO city = (FutureDAO) ob;
 		PreparedStatement s = null;
 		try {
 			s = c.prepareStatement(" INSERT INTO " + table_name + " ( " +

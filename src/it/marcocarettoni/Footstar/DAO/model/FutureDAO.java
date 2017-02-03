@@ -3,6 +3,7 @@ package it.marcocarettoni.Footstar.DAO.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.Future.Future2;
 
 public class FutureDAO extends IDAO {
@@ -22,7 +23,7 @@ public class FutureDAO extends IDAO {
 
 	public FutureDAO(Future2 cy, int language) {
 		setByXML(cy, language);
-	}
+	}	
 	
 	public void setByResultSet(ResultSet rs) throws SQLException {
 		ID = rs.getInt("ID");
@@ -30,7 +31,12 @@ public class FutureDAO extends IDAO {
 		DESCR = rs.getString("DESCR");
 	}
 	
-	public void setByXML(Future2 cy, int language) {
+	@Override
+	protected void setByXML(IModelXML cy) {}
+	
+	@Override
+	protected void setByXML(IModelXML cyz, int language) {
+		Future2 cy = (Future2) cyz;
 		ID = cy.getId();
 		IDL = language;
 		DESCR = cy.getValue();
@@ -59,5 +65,4 @@ public class FutureDAO extends IDAO {
 	public void setDESCR(String dESCR) {
 		DESCR = dESCR;
 	}
-
 }

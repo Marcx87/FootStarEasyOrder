@@ -3,160 +3,140 @@ package it.marcocarettoni.Footstar.DAO.controller;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.HashSet;
-import java.util.List;
 
 import it.marcocarettoni.Footstar.DAO.DataPool.DB;
+import it.marcocarettoni.Footstar.DAO.model.IModelDAO;
 import it.marcocarettoni.Footstar.DAO.model.PlayerAdaptabilityDAO;
 import it.marcocarettoni.Footstar.DAO.model.PlayerDAO;
 import it.marcocarettoni.Footstar.DAO.model.PlayerNTDAO;
 import it.marcocarettoni.Footstar.DAO.model.PlayerTalentsDAO;
-import it.marcocarettoni.Footstar.xml.model.player.Player;
 
 public class PlayerController extends DAOController {
 
-	private HashSet<Integer> aggiunti = null;
-
 	public PlayerController() {
 		super(PlayerController.class, PlayerDAO.table_name);
-		aggiunti = new HashSet<Integer>();
 	}
 
-	public void processData(Connection c, List<Player> lista) throws SQLException {
-		for (Player row : lista) {
-			if (row != null && row.getPlayerId() != null) {
-				if (!aggiunti.contains(row.getPlayerId())) {
-					logger.debug("Inserito PlayerID: " + row.getPlayerId());
-					addRow(c, new PlayerDAO(row));
-					aggiunti.add(row.getPlayerId());
-				} else {
-					logger.debug("Player gia inserito PlayerID: " + row.getPlayerId());
-				}
-			} else {
-				logger.debug("Player inesistente: " + row.getPlayerId());
-			}
-		}
-	}
-
-	public void addRow(Connection c, PlayerDAO ob) throws SQLException {
+	public void addRow(Connection c, IModelDAO obj) throws SQLException {
+		PlayerDAO ob = (PlayerDAO) obj;
 		PreparedStatement s = null;
 		try {
 			s = c.prepareStatement(" INSERT INTO " + table_name + " ( " +
-						" PLAYERID, " + 
-						" USERID, " + 
-						" LASTLOGIN, " + 
-						" REGISTRATIONDATE, " + 
-						" TEAMID, " + 
-						" TEAMNAME, " + 
-						" PLAYERNAME, " + 
-						" POSITIONFULL, " + 
-						" POSITION, " + 
-						" SIDELEFT, " + 
-						" SIDERIGHT, " + 
-						" SIDECENTER, " + 
-						" AGE, " + 
-						" BIRTHCITY, " + 
-						" BIRTHCITY_CAPS, " + 
-						" BIRTHCITY_CAPSU21, " + 
-						" BIRTHCITY_CAPSU18, " + 
-						" BIRTHCITY_GOALS, " + 
-						" BIRTHCITY_GOALSU21, " + 
-						" BIRTHCITY_GOALSU18, " + 
-						" BIRTHDAY, " + 
-						" BIRTHMONTH, " + 
-						" BIRTHYEAR, " + 
-						" NEWBIRTHDAY, " + 
-						" NEWBIRTHYEAR, " + 
-						" NATIONALITY, " + 
-						" INJURED, " + 
-						" INJURED_GAMES, " + 
-						" SUSPENDED, " + 
-						" SUSPENDED_GAMES, " + 
-						" SUSPENDEDINT, " + 
-						" SUSPENDEDINT_GAMES, " + 
-						" FITNESS, " + 
-						" MORALE, " + 
-						" ADAPT, " + 
-						" CONFIDENCE, " + 
-						" FAVORITEFOOT, " + 
-						" INTRANK, " + 
-						" NATRANK, " + 
-						" HANDLING, " + 
-						" OUTOFAREA, " + 
-						" REFLEXES, " + 
-						" AGILITY, " + 
-						" TACKLING, " + 
-						" HEADING, " + 
-						" SHORTPASSES, " + 
-						" POSITIONING, " + 
-						" FINISHING, " + 
-						" TECHNIQUE, " + 
-						" SPEED, " + 
-						" STRENGTH, " + 
-						" THROWING, " + 
-						" GAMEVISION, " + 
-						" LONGPASSES, " + 
-						" CROSSES, " + 
-						" LONGSHOTS, " + 
-						" DRIBBLING, " + 
-						" JUMPING, " + 
-						" ACCELERATION, " + 
-						" MARKING, " + 
-						" SETPIECES, " + 
-						" FIRSTTOUCH, " + 
-						" COMMANDOFAREA, " + 
-						" CONSISTENCY, " + 
-						" FLAIR, " + 
-						" CONCENTRATION, " + 
-						" ANTICIPATION, " + 
-						" DECISIONS, " + 
-						" COMPOSURE, " + 
-						" BRAVERY, " + 
-						" CREATIVITY, " + 
-						" INFLUENCE, " + 
-						" SKILLSWEEK, " + 
-						" EXPERIENCE, " + 
-						" VALUE, " + 
-						" WAGE, " + 
-						" CONTRACT, " + 
-						" CONTRACTROLE, " + 
-						" LASTCONTRACTDATE, " + 
-						" YOUTHTEAM, " + 
-						" TRANSFERLIST, " + 
-						" RELEASE, " + 
-						" LOANLIST, " + 
-						" LOANFROM, " + 
-						" LOANTO, " + 
-						" LOANRETURNDATE, " + 
-						" LASTTRAINING, " + 
-						" DATELASTTRAINING, " + 
-						" DOUBLENAT, " + 
-						" COUNTRYNT, " + 
-						" NTSQUAD, " + 
-						" GOALS, " + 
-						" GOALSCAREER, " + 
-						" ASSISTS, " + 
-						" ASSISTSCAREER " + 
+					" PLAYERID, " +
+					" USERID, " +
+					" LASTLOGIN, " +
+					" REGISTRATIONDATE, " +
+					" TEAMID, " +
+					" TEAMNAME, " +
+					" PLAYERNAME, " +
+					" POSITIONFULL, " +
+					" POSITION, " +
+					" SIDELEFT, " +
+					" SIDERIGHT, " +
+					" SIDECENTER, " +
+					" AGE, " +
+					" BIRTHCITY, " +
+					" BIRTHCITY_CAPS, " +
+					" BIRTHCITY_CAPSU21, " +
+					" BIRTHCITY_CAPSU18, " +
+					" BIRTHCITY_GOALS, " +
+					" BIRTHCITY_GOALSU21, " +
+					" BIRTHCITY_GOALSU18, " +
+					" BIRTHDAY, " +
+					" BIRTHMONTH, " +
+					" BIRTHYEAR, " +
+					" NEWBIRTHDAY, " +
+					" NEWBIRTHYEAR, " +
+					" NATIONALITY, " +
+					" INJURED, " +
+					" INJURED_GAMES, " +
+					" SUSPENDED, " +
+					" SUSPENDED_GAMES, " +
+					" SUSPENDEDINT, " +
+					" SUSPENDEDINT_GAMES, " +
+					" FITNESS, " +
+					" MORALE, " +
+					" ADAPT, " +
+					" CONFIDENCE, " +
+					" FAVORITEFOOT, " +
+					" INTRANK, " +
+					" NATRANK, " +
+					" HANDLING, " +
+					" OUTOFAREA, " +
+					" REFLEXES, " +
+					" AGILITY, " +
+					" TACKLING, " +
+					" HEADING, " +
+					" SHORTPASSES, " +
+					" POSITIONING, " +
+					" FINISHING, " +
+					" TECHNIQUE, " +
+					" SPEED, " +
+					" STRENGTH, " +
+					" THROWING, " +
+					" GAMEVISION, " +
+					" LONGPASSES, " +
+					" CROSSES, " +
+					" LONGSHOTS, " +
+					" DRIBBLING, " +
+					" JUMPING, " +
+					" ACCELERATION, " +
+					" MARKING, " +
+					" SETPIECES, " +
+					" FIRSTTOUCH, " +
+					" COMMANDOFAREA, " +
+					" CONSISTENCY, " +
+					" FLAIR, " +
+					" CONCENTRATION, " +
+					" ANTICIPATION, " +
+					" DECISIONS, " +
+					" COMPOSURE, " +
+					" BRAVERY, " +
+					" CREATIVITY, " +
+					" INFLUENCE, " +
+					" SKILLSWEEK, " +
+					" EXPERIENCE, " +
+					" VALUE, " +
+					" WAGE, " +
+					" CONTRACT, " +
+					" CONTRACTROLE, " +
+					" LASTCONTRACTDATE, " +
+					" YOUTHTEAM, " +
+					" TRANSFERLIST, " +
+					" RELEASE, " +
+					" LOANLIST, " +
+					" LOANFROM, " +
+					" LOANTO, " +
+					" LOANRETURNDATE, " +
+					" LASTTRAINING, " +
+					" DATELASTTRAINING, " +
+					" DOUBLENAT, " +
+					" COUNTRYNT, " +
+					" NTSQUAD, " +
+					" GOALS, " +
+					" GOALSCAREER, " +
+					" ASSISTS, " +
+					" ASSISTSCAREER " +
 					" ) VALUES ( " +
-						" ?, ?, ?, ?, ?, " +
-						" ?, ?, ?, ?, ?, " +
-						" ?, ?, ?, ?, ?, " +
-						" ?, ?, ?, ?, ?, " +
-						" ?, ?, ?, ?, ?, " +
-						" ?, ?, ?, ?, ?, " +
-						" ?, ?, ?, ?, ?, " +
-						" ?, ?, ?, ?, ?, " +
-						" ?, ?, ?, ?, ?, " +
-						" ?, ?, ?, ?, ?, " +
-						" ?, ?, ?, ?, ?, " +
-						" ?, ?, ?, ?, ?, " +
-						" ?, ?, ?, ?, ?, " +
-						" ?, ?, ?, ?, ?, " +
-						" ?, ?, ?, ?, ?, " +
-						" ?, ?, ?, ?, ?, " +
-						" ?, ?, ?, ?, ?, " +
-						" ?, ?, ?, ?, ?, " +
-						" ?, ?, ?, ?, ? " +
+					" ?, ?, ?, ?, ?, " +
+					" ?, ?, ?, ?, ?, " +
+					" ?, ?, ?, ?, ?, " +
+					" ?, ?, ?, ?, ?, " +
+					" ?, ?, ?, ?, ?, " +
+					" ?, ?, ?, ?, ?, " +
+					" ?, ?, ?, ?, ?, " +
+					" ?, ?, ?, ?, ?, " +
+					" ?, ?, ?, ?, ?, " +
+					" ?, ?, ?, ?, ?, " +
+					" ?, ?, ?, ?, ?, " +
+					" ?, ?, ?, ?, ?, " +
+					" ?, ?, ?, ?, ?, " +
+					" ?, ?, ?, ?, ?, " +
+					" ?, ?, ?, ?, ?, " +
+					" ?, ?, ?, ?, ?, " +
+					" ?, ?, ?, ?, ?, " +
+					" ?, ?, ?, ?, ?, " +
+					" ?, ?, ?, ?, ? " +
 					" ) ");
 
 			int i = 1;
@@ -256,7 +236,7 @@ public class PlayerController extends DAOController {
 			s.setShort(i++, ob.getGoalsCareer());
 			s.setShort(i++, ob.getAssists());
 			s.setShort(i++, ob.getAssistsCareer());
-			
+
 			s.executeUpdate();
 			addRowAdapt(c, ob);
 			addRowNT(c, ob);

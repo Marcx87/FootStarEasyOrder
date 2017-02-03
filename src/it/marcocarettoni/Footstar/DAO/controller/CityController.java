@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import it.marcocarettoni.Footstar.DAO.DataPool.DB;
 import it.marcocarettoni.Footstar.DAO.model.CityDAO;
+import it.marcocarettoni.Footstar.DAO.model.IModelDAO;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.Cities;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.Cities.City;
 
@@ -14,14 +15,15 @@ public class CityController extends DAOController {
 	public CityController() {
 		super(CityController.class, CityDAO.table_name);
 	}
-
+	
 	public void processData(Connection c, Cities lista, int language) throws SQLException {
 		for (City row : lista.getCity()) {
 			addRow(c, new CityDAO(row, language));
 		}
 	}
 
-	private void addRow(Connection c, CityDAO city) throws SQLException {
+	public void addRow(Connection c, IModelDAO ob) throws SQLException {
+		CityDAO city = (CityDAO) ob;
 		PreparedStatement s = null;
 		try {
 			s = c.prepareStatement(" INSERT INTO " + table_name + " ( " +

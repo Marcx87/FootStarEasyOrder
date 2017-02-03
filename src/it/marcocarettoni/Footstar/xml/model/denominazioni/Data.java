@@ -5,7 +5,6 @@
 // Generated on: 2017.01.09 at 11:51:46 PM CET 
 //
 
-
 package it.marcocarettoni.Footstar.xml.model.denominazioni;
 
 import java.util.ArrayList;
@@ -19,11 +18,14 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -227,1799 +229,1761 @@ import javax.xml.bind.annotation.XmlValue;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "trainings",
-    "languages",
-    "countries",
-    "cities",
-    "playerExperience",
-    "positions",
-    "sides",
-    "future",
-    "mentalSkills",
-    "databaseData"
+		"trainings",
+		"languages",
+		"countries",
+		"cities",
+		"playerExperience",
+		"positions",
+		"sides",
+		"future",
+		"mentalSkills",
+		"databaseData"
 })
 @XmlRootElement(name = "data")
-public class Data {
-
-    protected Data.Trainings trainings;
-    protected Data.Languages languages;
-    protected Data.Countries countries;
-    protected Data.Cities cities;
-    @XmlElement(name = "player_experience")
-    protected Data.PlayerExperience playerExperience;
-    protected Data.Positions positions;
-    protected Data.Sides sides;
-    protected Data.Future future;
-    @XmlElement(name = "mental_skills")
-    protected Data.MentalSkills mentalSkills;
-    @XmlElement(name = "database_data")
-    protected Data.DatabaseData databaseData;
-
-    /**
-     * Gets the value of the trainings property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Data.Trainings }
-     *     
-     */
-    public Data.Trainings getTrainings() {
-        return trainings;
-    }
-
-    /**
-     * Sets the value of the trainings property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Data.Trainings }
-     *     
-     */
-    public void setTrainings(Data.Trainings value) {
-        this.trainings = value;
-    }
-
-    /**
-     * Gets the value of the languages property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Data.Languages }
-     *     
-     */
-    public Data.Languages getLanguages() {
-        return languages;
-    }
-
-    /**
-     * Sets the value of the languages property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Data.Languages }
-     *     
-     */
-    public void setLanguages(Data.Languages value) {
-        this.languages = value;
-    }
-
-    /**
-     * Gets the value of the countries property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Data.Countries }
-     *     
-     */
-    public Data.Countries getCountries() {
-        return countries;
-    }
-
-    /**
-     * Sets the value of the countries property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Data.Countries }
-     *     
-     */
-    public void setCountries(Data.Countries value) {
-        this.countries = value;
-    }
-
-    /**
-     * Gets the value of the cities property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Data.Cities }
-     *     
-     */
-    public Data.Cities getCities() {
-        return cities;
-    }
-
-    /**
-     * Sets the value of the cities property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Data.Cities }
-     *     
-     */
-    public void setCities(Data.Cities value) {
-        this.cities = value;
-    }
-
-    /**
-     * Gets the value of the playerExperience property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Data.PlayerExperience }
-     *     
-     */
-    public Data.PlayerExperience getPlayerExperience() {
-        return playerExperience;
-    }
-
-    /**
-     * Sets the value of the playerExperience property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Data.PlayerExperience }
-     *     
-     */
-    public void setPlayerExperience(Data.PlayerExperience value) {
-        this.playerExperience = value;
-    }
-
-    /**
-     * Gets the value of the positions property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Data.Positions }
-     *     
-     */
-    public Data.Positions getPositions() {
-        return positions;
-    }
-
-    /**
-     * Sets the value of the positions property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Data.Positions }
-     *     
-     */
-    public void setPositions(Data.Positions value) {
-        this.positions = value;
-    }
-
-    /**
-     * Gets the value of the sides property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Data.Sides }
-     *     
-     */
-    public Data.Sides getSides() {
-        return sides;
-    }
-
-    /**
-     * Sets the value of the sides property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Data.Sides }
-     *     
-     */
-    public void setSides(Data.Sides value) {
-        this.sides = value;
-    }
-
-    /**
-     * Gets the value of the future property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Data.Future }
-     *     
-     */
-    public Data.Future getFuture() {
-        return future;
-    }
-
-    /**
-     * Sets the value of the future property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Data.Future }
-     *     
-     */
-    public void setFuture(Data.Future value) {
-        this.future = value;
-    }
-
-    /**
-     * Gets the value of the mentalSkills property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Data.MentalSkills }
-     *     
-     */
-    public Data.MentalSkills getMentalSkills() {
-        return mentalSkills;
-    }
-
-    /**
-     * Sets the value of the mentalSkills property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Data.MentalSkills }
-     *     
-     */
-    public void setMentalSkills(Data.MentalSkills value) {
-        this.mentalSkills = value;
-    }
-
-    /**
-     * Gets the value of the databaseData property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Data.DatabaseData }
-     *     
-     */
-    public Data.DatabaseData getDatabaseData() {
-        return databaseData;
-    }
-
-    /**
-     * Sets the value of the databaseData property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Data.DatabaseData }
-     *     
-     */
-    public void setDatabaseData(Data.DatabaseData value) {
-        this.databaseData = value;
-    }
-
-
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="city" maxOccurs="unbounded" minOccurs="0">
-     *           &lt;complexType>
-     *             &lt;simpleContent>
-     *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-     *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedShort" />
-     *                 &lt;attribute name="country_id" type="{http://www.w3.org/2001/XMLSchema}unsignedShort" />
-     *               &lt;/extension>
-     *             &lt;/simpleContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "city"
-    })
-    public static class Cities {
-
-        protected List<Data.Cities.City> city;
-
-        /**
-         * Gets the value of the city property.
-         * 
-         * <p>
-         * This accessor method returns a reference to the live list,
-         * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the city property.
-         * 
-         * <p>
-         * For example, to add a new item, do as follows:
-         * <pre>
-         *    getCity().add(newItem);
-         * </pre>
-         * 
-         * 
-         * <p>
-         * Objects of the following type(s) are allowed in the list
-         * {@link Data.Cities.City }
-         * 
-         * 
-         */
-        public List<Data.Cities.City> getCity() {
-            if (city == null) {
-                city = new ArrayList<Data.Cities.City>();
-            }
-            return this.city;
-        }
-
-
-        /**
-         * <p>Java class for anonymous complex type.
-         * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;simpleContent>
-         *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-         *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedShort" />
-         *       &lt;attribute name="country_id" type="{http://www.w3.org/2001/XMLSchema}unsignedShort" />
-         *     &lt;/extension>
-         *   &lt;/simpleContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
-         */
-        @XmlAccessorType(XmlAccessType.FIELD)
-        @XmlType(name = "", propOrder = {
-            "value"
-        })
-        public static class City {
-
-            @XmlValue
-            protected String value;
-            @XmlAttribute(name = "id")
-            @XmlSchemaType(name = "unsignedShort")
-            protected Integer id;
-            @XmlAttribute(name = "country_id")
-            @XmlSchemaType(name = "unsignedShort")
-            protected Integer countryId;
-
-            /**
-             * Gets the value of the value property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getValue() {
-                return value;
-            }
-
-            /**
-             * Sets the value of the value property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setValue(String value) {
-                this.value = value;
-            }
-
-            /**
-             * Gets the value of the id property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link Integer }
-             *     
-             */
-            public Integer getId() {
-                return id;
-            }
-
-            /**
-             * Sets the value of the id property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link Integer }
-             *     
-             */
-            public void setId(Integer value) {
-                this.id = value;
-            }
-
-            /**
-             * Gets the value of the countryId property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link Integer }
-             *     
-             */
-            public Integer getCountryId() {
-                return countryId;
-            }
-
-            /**
-             * Sets the value of the countryId property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link Integer }
-             *     
-             */
-            public void setCountryId(Integer value) {
-                this.countryId = value;
-            }
-
-        }
-
-    }
-
-
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="country" maxOccurs="unbounded" minOccurs="0">
-     *           &lt;complexType>
-     *             &lt;simpleContent>
-     *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-     *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedShort" />
-     *                 &lt;attribute name="num_divs" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
-     *               &lt;/extension>
-     *             &lt;/simpleContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "country"
-    })
-    public static class Countries {
-
-        protected List<Data.Countries.Country> country;
-
-        /**
-         * Gets the value of the country property.
-         * 
-         * <p>
-         * This accessor method returns a reference to the live list,
-         * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the country property.
-         * 
-         * <p>
-         * For example, to add a new item, do as follows:
-         * <pre>
-         *    getCountry().add(newItem);
-         * </pre>
-         * 
-         * 
-         * <p>
-         * Objects of the following type(s) are allowed in the list
-         * {@link Data.Countries.Country }
-         * 
-         * 
-         */
-        public List<Data.Countries.Country> getCountry() {
-            if (country == null) {
-                country = new ArrayList<Data.Countries.Country>();
-            }
-            return this.country;
-        }
-
-
-        /**
-         * <p>Java class for anonymous complex type.
-         * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;simpleContent>
-         *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-         *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedShort" />
-         *       &lt;attribute name="num_divs" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
-         *     &lt;/extension>
-         *   &lt;/simpleContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
-         */
-        @XmlAccessorType(XmlAccessType.FIELD)
-        @XmlType(name = "", propOrder = {
-            "value"
-        })
-        public static class Country {
-
-            @XmlValue
-            protected String value;
-            @XmlAttribute(name = "id")
-            @XmlSchemaType(name = "unsignedShort")
-            protected Integer id;
-            @XmlAttribute(name = "num_divs")
-            @XmlSchemaType(name = "unsignedByte")
-            protected Short numDivs;
-
-            /**
-             * Gets the value of the value property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getValue() {
-                return value;
-            }
-
-            /**
-             * Sets the value of the value property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setValue(String value) {
-                this.value = value;
-            }
-
-            /**
-             * Gets the value of the id property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link Integer }
-             *     
-             */
-            public Integer getId() {
-                return id;
-            }
-
-            /**
-             * Sets the value of the id property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link Integer }
-             *     
-             */
-            public void setId(Integer value) {
-                this.id = value;
-            }
-
-            /**
-             * Gets the value of the numDivs property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link Short }
-             *     
-             */
-            public Short getNumDivs() {
-                return numDivs;
-            }
-
-            /**
-             * Sets the value of the numDivs property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link Short }
-             *     
-             */
-            public void setNumDivs(Short value) {
-                this.numDivs = value;
-            }
-
-        }
-
-    }
-
-
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="min_player_id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" minOccurs="0"/>
-     *         &lt;element name="max_player_id" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" minOccurs="0"/>
-     *         &lt;element name="min_team_id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" minOccurs="0"/>
-     *         &lt;element name="max_team_id" type="{http://www.w3.org/2001/XMLSchema}unsignedShort" minOccurs="0"/>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "minPlayerId",
-        "maxPlayerId",
-        "minTeamId",
-        "maxTeamId"
-    })
-    public static class DatabaseData {
-
-        @XmlElement(name = "min_player_id")
-        @XmlSchemaType(name = "unsignedByte")
-        protected Short minPlayerId;
-        @XmlElement(name = "max_player_id")
-        @XmlSchemaType(name = "unsignedInt")
-        protected Integer maxPlayerId;
-        @XmlElement(name = "min_team_id")
-        @XmlSchemaType(name = "unsignedByte")
-        protected Short minTeamId;
-        @XmlElement(name = "max_team_id")
-        @XmlSchemaType(name = "unsignedShort")
-        protected Integer maxTeamId;
-
-        /**
-         * Gets the value of the minPlayerId property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link Short }
-         *     
-         */
-        public Short getMinPlayerId() {
-            return minPlayerId;
-        }
-
-        /**
-         * Sets the value of the minPlayerId property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link Short }
-         *     
-         */
-        public void setMinPlayerId(Short value) {
-            this.minPlayerId = value;
-        }
-
-        /**
-         * Gets the value of the maxPlayerId property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link Long }
-         *     
-         */
-        public Integer getMaxPlayerId() {
-            return maxPlayerId;
-        }
-
-        /**
-         * Sets the value of the maxPlayerId property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link Long }
-         *     
-         */
-        public void setMaxPlayerId(Integer value) {
-            this.maxPlayerId = value;
-        }
-
-        /**
-         * Gets the value of the minTeamId property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link Short }
-         *     
-         */
-        public Short getMinTeamId() {
-            return minTeamId;
-        }
-
-        /**
-         * Sets the value of the minTeamId property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link Short }
-         *     
-         */
-        public void setMinTeamId(Short value) {
-            this.minTeamId = value;
-        }
-
-        /**
-         * Gets the value of the maxTeamId property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link Integer }
-         *     
-         */
-        public Integer getMaxTeamId() {
-            return maxTeamId;
-        }
-
-        /**
-         * Sets the value of the maxTeamId property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link Integer }
-         *     
-         */
-        public void setMaxTeamId(Integer value) {
-            this.maxTeamId = value;
-        }
-
-    }
-
-
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="future" maxOccurs="unbounded" minOccurs="0">
-     *           &lt;complexType>
-     *             &lt;simpleContent>
-     *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-     *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
-     *               &lt;/extension>
-     *             &lt;/simpleContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "future"
-    })
-    public static class Future {
-
-        protected List<Data.Future.Future2> future;
-
-        /**
-         * Gets the value of the future property.
-         * 
-         * <p>
-         * This accessor method returns a reference to the live list,
-         * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the future property.
-         * 
-         * <p>
-         * For example, to add a new item, do as follows:
-         * <pre>
-         *    getFuture().add(newItem);
-         * </pre>
-         * 
-         * 
-         * <p>
-         * Objects of the following type(s) are allowed in the list
-         * {@link Data.Future.Future }
-         * 
-         * 
-         */
-        public List<Data.Future.Future2> getFuture() {
-            if (future == null) {
-                future = new ArrayList<Data.Future.Future2>();
-            }
-            return this.future;
-        }
-
-
-        /**
-         * <p>Java class for anonymous complex type.
-         * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;simpleContent>
-         *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-         *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
-         *     &lt;/extension>
-         *   &lt;/simpleContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
-         */
-        @XmlAccessorType(XmlAccessType.FIELD)
-        @XmlType(name = "", propOrder = {
-            "value"
-        })
-        public static class Future2 {
-
-            @XmlValue
-            protected String value;
-            @XmlAttribute(name = "id")
-            @XmlSchemaType(name = "unsignedByte")
-            protected Short id;
-
-            /**
-             * Gets the value of the value property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getValue() {
-                return value;
-            }
-
-            /**
-             * Sets the value of the value property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setValue(String value) {
-                this.value = value;
-            }
-
-            /**
-             * Gets the value of the id property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link Short }
-             *     
-             */
-            public Short getId() {
-                return id;
-            }
-
-            /**
-             * Sets the value of the id property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link Short }
-             *     
-             */
-            public void setId(Short value) {
-                this.id = value;
-            }
-
-        }
-
-    }
-
-
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="language_item" maxOccurs="unbounded" minOccurs="0">
-     *           &lt;complexType>
-     *             &lt;simpleContent>
-     *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-     *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
-     *               &lt;/extension>
-     *             &lt;/simpleContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "languageItem"
-    })
-    public static class Languages {
-
-        @XmlElement(name = "language_item")
-        protected List<Data.Languages.LanguageItem> languageItem;
-
-        /**
-         * Gets the value of the languageItem property.
-         * 
-         * <p>
-         * This accessor method returns a reference to the live list,
-         * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the languageItem property.
-         * 
-         * <p>
-         * For example, to add a new item, do as follows:
-         * <pre>
-         *    getLanguageItem().add(newItem);
-         * </pre>
-         * 
-         * 
-         * <p>
-         * Objects of the following type(s) are allowed in the list
-         * {@link Data.Languages.LanguageItem }
-         * 
-         * 
-         */
-        public List<Data.Languages.LanguageItem> getLanguageItem() {
-            if (languageItem == null) {
-                languageItem = new ArrayList<Data.Languages.LanguageItem>();
-            }
-            return this.languageItem;
-        }
-
-
-        /**
-         * <p>Java class for anonymous complex type.
-         * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;simpleContent>
-         *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-         *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
-         *     &lt;/extension>
-         *   &lt;/simpleContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
-         */
-        @XmlAccessorType(XmlAccessType.FIELD)
-        @XmlType(name = "", propOrder = {
-            "value"
-        })
-        public static class LanguageItem {
-
-            @XmlValue
-            protected String value;
-            @XmlAttribute(name = "id")
-            @XmlSchemaType(name = "unsignedByte")
-            protected Short id;
-
-            /**
-             * Gets the value of the value property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getValue() {
-                return value;
-            }
-
-            /**
-             * Sets the value of the value property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setValue(String value) {
-                this.value = value;
-            }
-
-            /**
-             * Gets the value of the id property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link Short }
-             *     
-             */
-            public Short getId() {
-                return id;
-            }
-
-            /**
-             * Sets the value of the id property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link Short }
-             *     
-             */
-            public void setId(Short value) {
-                this.id = value;
-            }
-
-        }
-
-    }
-
-
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="skill" maxOccurs="unbounded" minOccurs="0">
-     *           &lt;complexType>
-     *             &lt;simpleContent>
-     *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-     *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
-     *               &lt;/extension>
-     *             &lt;/simpleContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "skill"
-    })
-    public static class MentalSkills {
-
-        protected List<Data.MentalSkills.Skill> skill;
-
-        /**
-         * Gets the value of the skill property.
-         * 
-         * <p>
-         * This accessor method returns a reference to the live list,
-         * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the skill property.
-         * 
-         * <p>
-         * For example, to add a new item, do as follows:
-         * <pre>
-         *    getSkill().add(newItem);
-         * </pre>
-         * 
-         * 
-         * <p>
-         * Objects of the following type(s) are allowed in the list
-         * {@link Data.MentalSkills.Skill }
-         * 
-         * 
-         */
-        public List<Data.MentalSkills.Skill> getSkill() {
-            if (skill == null) {
-                skill = new ArrayList<Data.MentalSkills.Skill>();
-            }
-            return this.skill;
-        }
-
-
-        /**
-         * <p>Java class for anonymous complex type.
-         * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;simpleContent>
-         *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-         *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
-         *     &lt;/extension>
-         *   &lt;/simpleContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
-         */
-        @XmlAccessorType(XmlAccessType.FIELD)
-        @XmlType(name = "", propOrder = {
-            "value"
-        })
-        public static class Skill {
-
-            @XmlValue
-            protected String value;
-            @XmlAttribute(name = "id")
-            @XmlSchemaType(name = "unsignedByte")
-            protected Short id;
-
-            /**
-             * Gets the value of the value property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getValue() {
-                return value;
-            }
-
-            /**
-             * Sets the value of the value property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setValue(String value) {
-                this.value = value;
-            }
-
-            /**
-             * Gets the value of the id property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link Short }
-             *     
-             */
-            public Short getId() {
-                return id;
-            }
-
-            /**
-             * Sets the value of the id property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link Short }
-             *     
-             */
-            public void setId(Short value) {
-                this.id = value;
-            }
-
-        }
-
-    }
-
-
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="exp_item" maxOccurs="unbounded" minOccurs="0">
-     *           &lt;complexType>
-     *             &lt;simpleContent>
-     *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-     *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
-     *               &lt;/extension>
-     *             &lt;/simpleContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "expItem"
-    })
-    public static class PlayerExperience {
-
-        @XmlElement(name = "exp_item")
-        protected List<Data.PlayerExperience.ExpItem> expItem;
-
-        /**
-         * Gets the value of the expItem property.
-         * 
-         * <p>
-         * This accessor method returns a reference to the live list,
-         * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the expItem property.
-         * 
-         * <p>
-         * For example, to add a new item, do as follows:
-         * <pre>
-         *    getExpItem().add(newItem);
-         * </pre>
-         * 
-         * 
-         * <p>
-         * Objects of the following type(s) are allowed in the list
-         * {@link Data.PlayerExperience.ExpItem }
-         * 
-         * 
-         */
-        public List<Data.PlayerExperience.ExpItem> getExpItem() {
-            if (expItem == null) {
-                expItem = new ArrayList<Data.PlayerExperience.ExpItem>();
-            }
-            return this.expItem;
-        }
-
-
-        /**
-         * <p>Java class for anonymous complex type.
-         * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;simpleContent>
-         *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-         *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
-         *     &lt;/extension>
-         *   &lt;/simpleContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
-         */
-        @XmlAccessorType(XmlAccessType.FIELD)
-        @XmlType(name = "", propOrder = {
-            "value"
-        })
-        public static class ExpItem {
-
-            @XmlValue
-            protected String value;
-            @XmlAttribute(name = "id")
-            @XmlSchemaType(name = "unsignedByte")
-            protected Short id;
-
-            /**
-             * Gets the value of the value property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getValue() {
-                return value;
-            }
-
-            /**
-             * Sets the value of the value property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setValue(String value) {
-                this.value = value;
-            }
-
-            /**
-             * Gets the value of the id property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link Short }
-             *     
-             */
-            public Short getId() {
-                return id;
-            }
-
-            /**
-             * Sets the value of the id property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link Short }
-             *     
-             */
-            public void setId(Short value) {
-                this.id = value;
-            }
-
-        }
-
-    }
-
-
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="position" maxOccurs="unbounded" minOccurs="0">
-     *           &lt;complexType>
-     *             &lt;simpleContent>
-     *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-     *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
-     *               &lt;/extension>
-     *             &lt;/simpleContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "position"
-    })
-    public static class Positions {
-
-        protected List<Data.Positions.Position> position;
-
-        /**
-         * Gets the value of the position property.
-         * 
-         * <p>
-         * This accessor method returns a reference to the live list,
-         * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the position property.
-         * 
-         * <p>
-         * For example, to add a new item, do as follows:
-         * <pre>
-         *    getPosition().add(newItem);
-         * </pre>
-         * 
-         * 
-         * <p>
-         * Objects of the following type(s) are allowed in the list
-         * {@link Data.Positions.Position }
-         * 
-         * 
-         */
-        public List<Data.Positions.Position> getPosition() {
-            if (position == null) {
-                position = new ArrayList<Data.Positions.Position>();
-            }
-            return this.position;
-        }
-
-
-        /**
-         * <p>Java class for anonymous complex type.
-         * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;simpleContent>
-         *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-         *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
-         *     &lt;/extension>
-         *   &lt;/simpleContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
-         */
-        @XmlAccessorType(XmlAccessType.FIELD)
-        @XmlType(name = "", propOrder = {
-            "value"
-        })
-        public static class Position {
-
-            @XmlValue
-            protected String value;
-            @XmlAttribute(name = "id")
-            @XmlSchemaType(name = "unsignedByte")
-            protected Short id;
-
-            /**
-             * Gets the value of the value property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getValue() {
-                return value;
-            }
-
-            /**
-             * Sets the value of the value property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setValue(String value) {
-                this.value = value;
-            }
-
-            /**
-             * Gets the value of the id property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link Short }
-             *     
-             */
-            public Short getId() {
-                return id;
-            }
-
-            /**
-             * Sets the value of the id property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link Short }
-             *     
-             */
-            public void setId(Short value) {
-                this.id = value;
-            }
-
-        }
-
-    }
-
-
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="side" maxOccurs="unbounded" minOccurs="0">
-     *           &lt;complexType>
-     *             &lt;simpleContent>
-     *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-     *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
-     *               &lt;/extension>
-     *             &lt;/simpleContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "side"
-    })
-    public static class Sides {
-
-        protected List<Data.Sides.Side> side;
-
-        /**
-         * Gets the value of the side property.
-         * 
-         * <p>
-         * This accessor method returns a reference to the live list,
-         * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the side property.
-         * 
-         * <p>
-         * For example, to add a new item, do as follows:
-         * <pre>
-         *    getSide().add(newItem);
-         * </pre>
-         * 
-         * 
-         * <p>
-         * Objects of the following type(s) are allowed in the list
-         * {@link Data.Sides.Side }
-         * 
-         * 
-         */
-        public List<Data.Sides.Side> getSide() {
-            if (side == null) {
-                side = new ArrayList<Data.Sides.Side>();
-            }
-            return this.side;
-        }
-
-
-        /**
-         * <p>Java class for anonymous complex type.
-         * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;simpleContent>
-         *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-         *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
-         *     &lt;/extension>
-         *   &lt;/simpleContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
-         */
-        @XmlAccessorType(XmlAccessType.FIELD)
-        @XmlType(name = "", propOrder = {
-            "value"
-        })
-        public static class Side {
-
-            @XmlValue
-            protected String value;
-            @XmlAttribute(name = "id")
-            @XmlSchemaType(name = "unsignedByte")
-            protected Short id;
-
-            /**
-             * Gets the value of the value property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getValue() {
-                return value;
-            }
-
-            /**
-             * Sets the value of the value property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setValue(String value) {
-                this.value = value;
-            }
-
-            /**
-             * Gets the value of the id property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link Short }
-             *     
-             */
-            public Short getId() {
-                return id;
-            }
-
-            /**
-             * Sets the value of the id property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link Short }
-             *     
-             */
-            public void setId(Short value) {
-                this.id = value;
-            }
-
-        }
-
-    }
-
-
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="training_item" maxOccurs="unbounded" minOccurs="0">
-     *           &lt;complexType>
-     *             &lt;simpleContent>
-     *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-     *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
-     *               &lt;/extension>
-     *             &lt;/simpleContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "trainingItem"
-    })
-    public static class Trainings {
-
-        @XmlElement(name = "training_item")
-        protected List<Data.Trainings.TrainingItem> trainingItem;
-
-        /**
-         * Gets the value of the trainingItem property.
-         * 
-         * <p>
-         * This accessor method returns a reference to the live list,
-         * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the trainingItem property.
-         * 
-         * <p>
-         * For example, to add a new item, do as follows:
-         * <pre>
-         *    getTrainingItem().add(newItem);
-         * </pre>
-         * 
-         * 
-         * <p>
-         * Objects of the following type(s) are allowed in the list
-         * {@link Data.Trainings.TrainingItem }
-         * 
-         * 
-         */
-        public List<Data.Trainings.TrainingItem> getTrainingItem() {
-            if (trainingItem == null) {
-                trainingItem = new ArrayList<Data.Trainings.TrainingItem>();
-            }
-            return this.trainingItem;
-        }
-
-
-        /**
-         * <p>Java class for anonymous complex type.
-         * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;simpleContent>
-         *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-         *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
-         *     &lt;/extension>
-         *   &lt;/simpleContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
-         */
-        @XmlAccessorType(XmlAccessType.FIELD)
-        @XmlType(name = "", propOrder = {
-            "value"
-        })
-        public static class TrainingItem {
-
-            @XmlValue
-            protected String value;
-            @XmlAttribute(name = "id")
-            @XmlSchemaType(name = "unsignedByte")
-            protected Short id;
-
-            /**
-             * Gets the value of the value property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getValue() {
-                return value;
-            }
-
-            /**
-             * Sets the value of the value property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setValue(String value) {
-                this.value = value;
-            }
-
-            /**
-             * Gets the value of the id property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link Short }
-             *     
-             */
-            public Short getId() {
-                return id;
-            }
-
-            /**
-             * Sets the value of the id property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link Short }
-             *     
-             */
-            public void setId(Short value) {
-                this.id = value;
-            }
-
-        }
-
-    }
+public class Data implements IModelXML {
+
+	protected Data.Trainings trainings;
+	protected Data.Languages languages;
+	protected Data.Countries countries;
+	protected Data.Cities cities;
+	@XmlElement(name = "player_experience")
+	protected Data.PlayerExperience playerExperience;
+	protected Data.Positions positions;
+	protected Data.Sides sides;
+	protected Data.Future future;
+	@XmlElement(name = "mental_skills")
+	protected Data.MentalSkills mentalSkills;
+	@XmlElement(name = "database_data")
+	protected Data.DatabaseData databaseData;
+
+	/**
+	 * Gets the value of the trainings property.
+	 * 
+	 * @return possible object is {@link Data.Trainings }
+	 * 
+	 */
+	public Data.Trainings getTrainings() {
+		return trainings;
+	}
+
+	/**
+	 * Sets the value of the trainings property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Data.Trainings }
+	 * 
+	 */
+	public void setTrainings(Data.Trainings value) {
+		this.trainings = value;
+	}
+
+	/**
+	 * Gets the value of the languages property.
+	 * 
+	 * @return possible object is {@link Data.Languages }
+	 * 
+	 */
+	public Data.Languages getLanguages() {
+		return languages;
+	}
+
+	/**
+	 * Sets the value of the languages property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Data.Languages }
+	 * 
+	 */
+	public void setLanguages(Data.Languages value) {
+		this.languages = value;
+	}
+
+	/**
+	 * Gets the value of the countries property.
+	 * 
+	 * @return possible object is {@link Data.Countries }
+	 * 
+	 */
+	public Data.Countries getCountries() {
+		return countries;
+	}
+
+	/**
+	 * Sets the value of the countries property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Data.Countries }
+	 * 
+	 */
+	public void setCountries(Data.Countries value) {
+		this.countries = value;
+	}
+
+	/**
+	 * Gets the value of the cities property.
+	 * 
+	 * @return possible object is {@link Data.Cities }
+	 * 
+	 */
+	public Data.Cities getCities() {
+		return cities;
+	}
+
+	/**
+	 * Sets the value of the cities property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Data.Cities }
+	 * 
+	 */
+	public void setCities(Data.Cities value) {
+		this.cities = value;
+	}
+
+	/**
+	 * Gets the value of the playerExperience property.
+	 * 
+	 * @return possible object is {@link Data.PlayerExperience }
+	 * 
+	 */
+	public Data.PlayerExperience getPlayerExperience() {
+		return playerExperience;
+	}
+
+	/**
+	 * Sets the value of the playerExperience property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Data.PlayerExperience }
+	 * 
+	 */
+	public void setPlayerExperience(Data.PlayerExperience value) {
+		this.playerExperience = value;
+	}
+
+	/**
+	 * Gets the value of the positions property.
+	 * 
+	 * @return possible object is {@link Data.Positions }
+	 * 
+	 */
+	public Data.Positions getPositions() {
+		return positions;
+	}
+
+	/**
+	 * Sets the value of the positions property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Data.Positions }
+	 * 
+	 */
+	public void setPositions(Data.Positions value) {
+		this.positions = value;
+	}
+
+	/**
+	 * Gets the value of the sides property.
+	 * 
+	 * @return possible object is {@link Data.Sides }
+	 * 
+	 */
+	public Data.Sides getSides() {
+		return sides;
+	}
+
+	/**
+	 * Sets the value of the sides property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Data.Sides }
+	 * 
+	 */
+	public void setSides(Data.Sides value) {
+		this.sides = value;
+	}
+
+	/**
+	 * Gets the value of the future property.
+	 * 
+	 * @return possible object is {@link Data.Future }
+	 * 
+	 */
+	public Data.Future getFuture() {
+		return future;
+	}
+
+	/**
+	 * Sets the value of the future property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Data.Future }
+	 * 
+	 */
+	public void setFuture(Data.Future value) {
+		this.future = value;
+	}
+
+	/**
+	 * Gets the value of the mentalSkills property.
+	 * 
+	 * @return possible object is {@link Data.MentalSkills }
+	 * 
+	 */
+	public Data.MentalSkills getMentalSkills() {
+		return mentalSkills;
+	}
+
+	/**
+	 * Sets the value of the mentalSkills property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Data.MentalSkills }
+	 * 
+	 */
+	public void setMentalSkills(Data.MentalSkills value) {
+		this.mentalSkills = value;
+	}
+
+	/**
+	 * Gets the value of the databaseData property.
+	 * 
+	 * @return possible object is {@link Data.DatabaseData }
+	 * 
+	 */
+	public Data.DatabaseData getDatabaseData() {
+		return databaseData;
+	}
+
+	/**
+	 * Sets the value of the databaseData property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Data.DatabaseData }
+	 * 
+	 */
+	public void setDatabaseData(Data.DatabaseData value) {
+		this.databaseData = value;
+	}
+
+	/**
+	 * <p>
+	 * Java class for anonymous complex type.
+	 * 
+	 * <p>
+	 * The following schema fragment specifies the expected content contained within this class.
+	 * 
+	 * <pre>
+	 * &lt;complexType>
+	 *   &lt;complexContent>
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *       &lt;sequence>
+	 *         &lt;element name="city" maxOccurs="unbounded" minOccurs="0">
+	 *           &lt;complexType>
+	 *             &lt;simpleContent>
+	 *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+	 *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedShort" />
+	 *                 &lt;attribute name="country_id" type="{http://www.w3.org/2001/XMLSchema}unsignedShort" />
+	 *               &lt;/extension>
+	 *             &lt;/simpleContent>
+	 *           &lt;/complexType>
+	 *         &lt;/element>
+	 *       &lt;/sequence>
+	 *     &lt;/restriction>
+	 *   &lt;/complexContent>
+	 * &lt;/complexType>
+	 * </pre>
+	 * 
+	 * 
+	 */
+	@XmlAccessorType(XmlAccessType.FIELD)
+	@XmlType(name = "", propOrder = {
+			"city"
+	})
+	public static class Cities {
+
+		protected List<Data.Cities.City> city;
+
+		/**
+		 * Gets the value of the city property.
+		 * 
+		 * <p>
+		 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you
+		 * make to the returned list will be present inside the JAXB object. This is why there is not a <CODE>set</CODE>
+		 * method for the city property.
+		 * 
+		 * <p>
+		 * For example, to add a new item, do as follows:
+		 * 
+		 * <pre>
+		 * getCity().add(newItem);
+		 * </pre>
+		 * 
+		 * 
+		 * <p>
+		 * Objects of the following type(s) are allowed in the list {@link Data.Cities.City }
+		 * 
+		 * 
+		 */
+		public List<Data.Cities.City> getCity() {
+			if (city == null) {
+				city = new ArrayList<Data.Cities.City>();
+			}
+			return this.city;
+		}
+
+		/**
+		 * <p>
+		 * Java class for anonymous complex type.
+		 * 
+		 * <p>
+		 * The following schema fragment specifies the expected content contained within this class.
+		 * 
+		 * <pre>
+		 * &lt;complexType>
+		 *   &lt;simpleContent>
+		 *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+		 *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedShort" />
+		 *       &lt;attribute name="country_id" type="{http://www.w3.org/2001/XMLSchema}unsignedShort" />
+		 *     &lt;/extension>
+		 *   &lt;/simpleContent>
+		 * &lt;/complexType>
+		 * </pre>
+		 * 
+		 * 
+		 */
+		@XmlAccessorType(XmlAccessType.FIELD)
+		@XmlType(name = "", propOrder = {
+				"value"
+		})
+		public static class City implements IModelXML {
+
+			@XmlValue
+			protected String value;
+			@XmlAttribute(name = "id")
+			@XmlSchemaType(name = "unsignedShort")
+			protected Integer id;
+			@XmlAttribute(name = "country_id")
+			@XmlSchemaType(name = "unsignedShort")
+			protected Integer countryId;
+
+			/**
+			 * Gets the value of the value property.
+			 * 
+			 * @return possible object is {@link String }
+			 * 
+			 */
+			public String getValue() {
+				return value;
+			}
+
+			/**
+			 * Sets the value of the value property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link String }
+			 * 
+			 */
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			/**
+			 * Gets the value of the id property.
+			 * 
+			 * @return possible object is {@link Integer }
+			 * 
+			 */
+			public Integer getId() {
+				return id;
+			}
+
+			/**
+			 * Sets the value of the id property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link Integer }
+			 * 
+			 */
+			public void setId(Integer value) {
+				this.id = value;
+			}
+
+			/**
+			 * Gets the value of the countryId property.
+			 * 
+			 * @return possible object is {@link Integer }
+			 * 
+			 */
+			public Integer getCountryId() {
+				return countryId;
+			}
+
+			/**
+			 * Sets the value of the countryId property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link Integer }
+			 * 
+			 */
+			public void setCountryId(Integer value) {
+				this.countryId = value;
+			}
+
+			@Override
+			public Long getIDRow() {
+				return getId() != null ? new Long(getId()) : 0L;
+			}
+
+		}
+
+	}
+
+	/**
+	 * <p>
+	 * Java class for anonymous complex type.
+	 * 
+	 * <p>
+	 * The following schema fragment specifies the expected content contained within this class.
+	 * 
+	 * <pre>
+	 * &lt;complexType>
+	 *   &lt;complexContent>
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *       &lt;sequence>
+	 *         &lt;element name="country" maxOccurs="unbounded" minOccurs="0">
+	 *           &lt;complexType>
+	 *             &lt;simpleContent>
+	 *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+	 *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedShort" />
+	 *                 &lt;attribute name="num_divs" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
+	 *               &lt;/extension>
+	 *             &lt;/simpleContent>
+	 *           &lt;/complexType>
+	 *         &lt;/element>
+	 *       &lt;/sequence>
+	 *     &lt;/restriction>
+	 *   &lt;/complexContent>
+	 * &lt;/complexType>
+	 * </pre>
+	 * 
+	 * 
+	 */
+	@XmlAccessorType(XmlAccessType.FIELD)
+	@XmlType(name = "", propOrder = {
+			"country"
+	})
+	public static class Countries {
+
+		protected List<Data.Countries.Country> country;
+
+		/**
+		 * Gets the value of the country property.
+		 * 
+		 * <p>
+		 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you
+		 * make to the returned list will be present inside the JAXB object. This is why there is not a <CODE>set</CODE>
+		 * method for the country property.
+		 * 
+		 * <p>
+		 * For example, to add a new item, do as follows:
+		 * 
+		 * <pre>
+		 * getCountry().add(newItem);
+		 * </pre>
+		 * 
+		 * 
+		 * <p>
+		 * Objects of the following type(s) are allowed in the list {@link Data.Countries.Country }
+		 * 
+		 * 
+		 */
+		public List<Data.Countries.Country> getCountry() {
+			if (country == null) {
+				country = new ArrayList<Data.Countries.Country>();
+			}
+			return this.country;
+		}
+
+		/**
+		 * <p>
+		 * Java class for anonymous complex type.
+		 * 
+		 * <p>
+		 * The following schema fragment specifies the expected content contained within this class.
+		 * 
+		 * <pre>
+		 * &lt;complexType>
+		 *   &lt;simpleContent>
+		 *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+		 *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedShort" />
+		 *       &lt;attribute name="num_divs" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
+		 *     &lt;/extension>
+		 *   &lt;/simpleContent>
+		 * &lt;/complexType>
+		 * </pre>
+		 * 
+		 * 
+		 */
+		@XmlAccessorType(XmlAccessType.FIELD)
+		@XmlType(name = "", propOrder = {
+				"value"
+		})
+		public static class Country implements IModelXML {
+
+			@XmlValue
+			protected String value;
+			@XmlAttribute(name = "id")
+			@XmlSchemaType(name = "unsignedShort")
+			protected Integer id;
+			@XmlAttribute(name = "num_divs")
+			@XmlSchemaType(name = "unsignedByte")
+			protected Short numDivs;
+
+			/**
+			 * Gets the value of the value property.
+			 * 
+			 * @return possible object is {@link String }
+			 * 
+			 */
+			public String getValue() {
+				return value;
+			}
+
+			/**
+			 * Sets the value of the value property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link String }
+			 * 
+			 */
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			/**
+			 * Gets the value of the id property.
+			 * 
+			 * @return possible object is {@link Integer }
+			 * 
+			 */
+			public Integer getId() {
+				return id;
+			}
+
+			/**
+			 * Sets the value of the id property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link Integer }
+			 * 
+			 */
+			public void setId(Integer value) {
+				this.id = value;
+			}
+
+			/**
+			 * Gets the value of the numDivs property.
+			 * 
+			 * @return possible object is {@link Short }
+			 * 
+			 */
+			public Short getNumDivs() {
+				return numDivs;
+			}
+
+			/**
+			 * Sets the value of the numDivs property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link Short }
+			 * 
+			 */
+			public void setNumDivs(Short value) {
+				this.numDivs = value;
+			}
+
+			@Override
+			public Long getIDRow() {				
+				return getId() != null ? new Long(getId()) : 0L;
+			}
+
+		}
+
+	}
+
+	/**
+	 * <p>
+	 * Java class for anonymous complex type.
+	 * 
+	 * <p>
+	 * The following schema fragment specifies the expected content contained within this class.
+	 * 
+	 * <pre>
+	 * &lt;complexType>
+	 *   &lt;complexContent>
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *       &lt;sequence>
+	 *         &lt;element name="min_player_id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" minOccurs="0"/>
+	 *         &lt;element name="max_player_id" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" minOccurs="0"/>
+	 *         &lt;element name="min_team_id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" minOccurs="0"/>
+	 *         &lt;element name="max_team_id" type="{http://www.w3.org/2001/XMLSchema}unsignedShort" minOccurs="0"/>
+	 *       &lt;/sequence>
+	 *     &lt;/restriction>
+	 *   &lt;/complexContent>
+	 * &lt;/complexType>
+	 * </pre>
+	 * 
+	 * 
+	 */
+	@XmlAccessorType(XmlAccessType.FIELD)
+	@XmlType(name = "", propOrder = {
+			"minPlayerId",
+			"maxPlayerId",
+			"minTeamId",
+			"maxTeamId"
+	})
+	public static class DatabaseData implements IModelXML {
+
+		@XmlElement(name = "min_player_id")
+		@XmlSchemaType(name = "unsignedByte")
+		protected Short minPlayerId;
+		@XmlElement(name = "max_player_id")
+		@XmlSchemaType(name = "unsignedInt")
+		protected Integer maxPlayerId;
+		@XmlElement(name = "min_team_id")
+		@XmlSchemaType(name = "unsignedByte")
+		protected Short minTeamId;
+		@XmlElement(name = "max_team_id")
+		@XmlSchemaType(name = "unsignedShort")
+		protected Integer maxTeamId;
+
+		/**
+		 * Gets the value of the minPlayerId property.
+		 * 
+		 * @return possible object is {@link Short }
+		 * 
+		 */
+		public Short getMinPlayerId() {
+			return minPlayerId;
+		}
+
+		/**
+		 * Sets the value of the minPlayerId property.
+		 * 
+		 * @param value
+		 *            allowed object is {@link Short }
+		 * 
+		 */
+		public void setMinPlayerId(Short value) {
+			this.minPlayerId = value;
+		}
+
+		/**
+		 * Gets the value of the maxPlayerId property.
+		 * 
+		 * @return possible object is {@link Long }
+		 * 
+		 */
+		public Integer getMaxPlayerId() {
+			return maxPlayerId;
+		}
+
+		/**
+		 * Sets the value of the maxPlayerId property.
+		 * 
+		 * @param value
+		 *            allowed object is {@link Long }
+		 * 
+		 */
+		public void setMaxPlayerId(Integer value) {
+			this.maxPlayerId = value;
+		}
+
+		/**
+		 * Gets the value of the minTeamId property.
+		 * 
+		 * @return possible object is {@link Short }
+		 * 
+		 */
+		public Short getMinTeamId() {
+			return minTeamId;
+		}
+
+		/**
+		 * Sets the value of the minTeamId property.
+		 * 
+		 * @param value
+		 *            allowed object is {@link Short }
+		 * 
+		 */
+		public void setMinTeamId(Short value) {
+			this.minTeamId = value;
+		}
+
+		/**
+		 * Gets the value of the maxTeamId property.
+		 * 
+		 * @return possible object is {@link Integer }
+		 * 
+		 */
+		public Integer getMaxTeamId() {
+			return maxTeamId;
+		}
+
+		/**
+		 * Sets the value of the maxTeamId property.
+		 * 
+		 * @param value
+		 *            allowed object is {@link Integer }
+		 * 
+		 */
+		public void setMaxTeamId(Integer value) {
+			this.maxTeamId = value;
+		}
+		
+		@Override
+		public Long getIDRow() {				
+			return -1L;
+		}
+
+	}
+
+	/**
+	 * <p>
+	 * Java class for anonymous complex type.
+	 * 
+	 * <p>
+	 * The following schema fragment specifies the expected content contained within this class.
+	 * 
+	 * <pre>
+	 * &lt;complexType>
+	 *   &lt;complexContent>
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *       &lt;sequence>
+	 *         &lt;element name="future" maxOccurs="unbounded" minOccurs="0">
+	 *           &lt;complexType>
+	 *             &lt;simpleContent>
+	 *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+	 *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
+	 *               &lt;/extension>
+	 *             &lt;/simpleContent>
+	 *           &lt;/complexType>
+	 *         &lt;/element>
+	 *       &lt;/sequence>
+	 *     &lt;/restriction>
+	 *   &lt;/complexContent>
+	 * &lt;/complexType>
+	 * </pre>
+	 * 
+	 * 
+	 */
+	@XmlAccessorType(XmlAccessType.FIELD)
+	@XmlType(name = "", propOrder = {
+			"future"
+	})
+	public static class Future {
+
+		protected List<Data.Future.Future2> future;
+
+		/**
+		 * Gets the value of the future property.
+		 * 
+		 * <p>
+		 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you
+		 * make to the returned list will be present inside the JAXB object. This is why there is not a <CODE>set</CODE>
+		 * method for the future property.
+		 * 
+		 * <p>
+		 * For example, to add a new item, do as follows:
+		 * 
+		 * <pre>
+		 * getFuture().add(newItem);
+		 * </pre>
+		 * 
+		 * 
+		 * <p>
+		 * Objects of the following type(s) are allowed in the list {@link Data.Future.Future }
+		 * 
+		 * 
+		 */
+		public List<Data.Future.Future2> getFuture() {
+			if (future == null) {
+				future = new ArrayList<Data.Future.Future2>();
+			}
+			return this.future;
+		}
+
+		/**
+		 * <p>
+		 * Java class for anonymous complex type.
+		 * 
+		 * <p>
+		 * The following schema fragment specifies the expected content contained within this class.
+		 * 
+		 * <pre>
+		 * &lt;complexType>
+		 *   &lt;simpleContent>
+		 *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+		 *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
+		 *     &lt;/extension>
+		 *   &lt;/simpleContent>
+		 * &lt;/complexType>
+		 * </pre>
+		 * 
+		 * 
+		 */
+		@XmlAccessorType(XmlAccessType.FIELD)
+		@XmlType(name = "", propOrder = {
+				"value"
+		})
+		public static class Future2 implements IModelXML {
+
+			@XmlValue
+			protected String value;
+			@XmlAttribute(name = "id")
+			@XmlSchemaType(name = "unsignedByte")
+			protected Short id;
+
+			/**
+			 * Gets the value of the value property.
+			 * 
+			 * @return possible object is {@link String }
+			 * 
+			 */
+			public String getValue() {
+				return value;
+			}
+
+			/**
+			 * Sets the value of the value property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link String }
+			 * 
+			 */
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			/**
+			 * Gets the value of the id property.
+			 * 
+			 * @return possible object is {@link Short }
+			 * 
+			 */
+			public Short getId() {
+				return id;
+			}
+
+			/**
+			 * Sets the value of the id property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link Short }
+			 * 
+			 */
+			public void setId(Short value) {
+				this.id = value;
+			}
+			
+			@Override
+			public Long getIDRow() {				
+				return getId() != null ? new Long(getId()) : 0L;
+			}
+
+		}
+
+	}
+
+	/**
+	 * <p>
+	 * Java class for anonymous complex type.
+	 * 
+	 * <p>
+	 * The following schema fragment specifies the expected content contained within this class.
+	 * 
+	 * <pre>
+	 * &lt;complexType>
+	 *   &lt;complexContent>
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *       &lt;sequence>
+	 *         &lt;element name="language_item" maxOccurs="unbounded" minOccurs="0">
+	 *           &lt;complexType>
+	 *             &lt;simpleContent>
+	 *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+	 *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
+	 *               &lt;/extension>
+	 *             &lt;/simpleContent>
+	 *           &lt;/complexType>
+	 *         &lt;/element>
+	 *       &lt;/sequence>
+	 *     &lt;/restriction>
+	 *   &lt;/complexContent>
+	 * &lt;/complexType>
+	 * </pre>
+	 * 
+	 * 
+	 */
+	@XmlAccessorType(XmlAccessType.FIELD)
+	@XmlType(name = "", propOrder = {
+			"languageItem"
+	})
+	public static class Languages {
+
+		@XmlElement(name = "language_item")
+		protected List<Data.Languages.LanguageItem> languageItem;
+
+		/**
+		 * Gets the value of the languageItem property.
+		 * 
+		 * <p>
+		 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you
+		 * make to the returned list will be present inside the JAXB object. This is why there is not a <CODE>set</CODE>
+		 * method for the languageItem property.
+		 * 
+		 * <p>
+		 * For example, to add a new item, do as follows:
+		 * 
+		 * <pre>
+		 * getLanguageItem().add(newItem);
+		 * </pre>
+		 * 
+		 * 
+		 * <p>
+		 * Objects of the following type(s) are allowed in the list {@link Data.Languages.LanguageItem }
+		 * 
+		 * 
+		 */
+		public List<Data.Languages.LanguageItem> getLanguageItem() {
+			if (languageItem == null) {
+				languageItem = new ArrayList<Data.Languages.LanguageItem>();
+			}
+			return this.languageItem;
+		}
+
+		/**
+		 * <p>
+		 * Java class for anonymous complex type.
+		 * 
+		 * <p>
+		 * The following schema fragment specifies the expected content contained within this class.
+		 * 
+		 * <pre>
+		 * &lt;complexType>
+		 *   &lt;simpleContent>
+		 *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+		 *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
+		 *     &lt;/extension>
+		 *   &lt;/simpleContent>
+		 * &lt;/complexType>
+		 * </pre>
+		 * 
+		 * 
+		 */
+		@XmlAccessorType(XmlAccessType.FIELD)
+		@XmlType(name = "", propOrder = {
+				"value"
+		})
+		public static class LanguageItem implements IModelXML {
+
+			@XmlValue
+			protected String value;
+			@XmlAttribute(name = "id")
+			@XmlSchemaType(name = "unsignedByte")
+			protected Short id;
+
+			/**
+			 * Gets the value of the value property.
+			 * 
+			 * @return possible object is {@link String }
+			 * 
+			 */
+			public String getValue() {
+				return value;
+			}
+
+			/**
+			 * Sets the value of the value property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link String }
+			 * 
+			 */
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			/**
+			 * Gets the value of the id property.
+			 * 
+			 * @return possible object is {@link Short }
+			 * 
+			 */
+			public Short getId() {
+				return id;
+			}
+
+			/**
+			 * Sets the value of the id property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link Short }
+			 * 
+			 */
+			public void setId(Short value) {
+				this.id = value;
+			}
+
+			@Override
+			public Long getIDRow() {				
+				return getId() != null ? new Long(getId()) : 0L;
+			}
+		}
+
+	}
+
+	/**
+	 * <p>
+	 * Java class for anonymous complex type.
+	 * 
+	 * <p>
+	 * The following schema fragment specifies the expected content contained within this class.
+	 * 
+	 * <pre>
+	 * &lt;complexType>
+	 *   &lt;complexContent>
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *       &lt;sequence>
+	 *         &lt;element name="skill" maxOccurs="unbounded" minOccurs="0">
+	 *           &lt;complexType>
+	 *             &lt;simpleContent>
+	 *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+	 *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
+	 *               &lt;/extension>
+	 *             &lt;/simpleContent>
+	 *           &lt;/complexType>
+	 *         &lt;/element>
+	 *       &lt;/sequence>
+	 *     &lt;/restriction>
+	 *   &lt;/complexContent>
+	 * &lt;/complexType>
+	 * </pre>
+	 * 
+	 * 
+	 */
+	@XmlAccessorType(XmlAccessType.FIELD)
+	@XmlType(name = "", propOrder = {
+			"skill"
+	})
+	public static class MentalSkills {
+
+		protected List<Data.MentalSkills.Skill> skill;
+
+		/**
+		 * Gets the value of the skill property.
+		 * 
+		 * <p>
+		 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you
+		 * make to the returned list will be present inside the JAXB object. This is why there is not a <CODE>set</CODE>
+		 * method for the skill property.
+		 * 
+		 * <p>
+		 * For example, to add a new item, do as follows:
+		 * 
+		 * <pre>
+		 * getSkill().add(newItem);
+		 * </pre>
+		 * 
+		 * 
+		 * <p>
+		 * Objects of the following type(s) are allowed in the list {@link Data.MentalSkills.Skill }
+		 * 
+		 * 
+		 */
+		public List<Data.MentalSkills.Skill> getSkill() {
+			if (skill == null) {
+				skill = new ArrayList<Data.MentalSkills.Skill>();
+			}
+			return this.skill;
+		}
+
+		/**
+		 * <p>
+		 * Java class for anonymous complex type.
+		 * 
+		 * <p>
+		 * The following schema fragment specifies the expected content contained within this class.
+		 * 
+		 * <pre>
+		 * &lt;complexType>
+		 *   &lt;simpleContent>
+		 *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+		 *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
+		 *     &lt;/extension>
+		 *   &lt;/simpleContent>
+		 * &lt;/complexType>
+		 * </pre>
+		 * 
+		 * 
+		 */
+		@XmlAccessorType(XmlAccessType.FIELD)
+		@XmlType(name = "", propOrder = {
+				"value"
+		})
+		public static class Skill implements IModelXML {
+
+			@XmlValue
+			protected String value;
+			@XmlAttribute(name = "id")
+			@XmlSchemaType(name = "unsignedByte")
+			protected Short id;
+
+			/**
+			 * Gets the value of the value property.
+			 * 
+			 * @return possible object is {@link String }
+			 * 
+			 */
+			public String getValue() {
+				return value;
+			}
+
+			/**
+			 * Sets the value of the value property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link String }
+			 * 
+			 */
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			/**
+			 * Gets the value of the id property.
+			 * 
+			 * @return possible object is {@link Short }
+			 * 
+			 */
+			public Short getId() {
+				return id;
+			}
+
+			/**
+			 * Sets the value of the id property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link Short }
+			 * 
+			 */
+			public void setId(Short value) {
+				this.id = value;
+			}
+
+			@Override
+			public Long getIDRow() {
+				return getId() != null ? new Long(getId()) : 0L;
+			}
+
+		}
+
+	}
+
+	/**
+	 * <p>
+	 * Java class for anonymous complex type.
+	 * 
+	 * <p>
+	 * The following schema fragment specifies the expected content contained within this class.
+	 * 
+	 * <pre>
+	 * &lt;complexType>
+	 *   &lt;complexContent>
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *       &lt;sequence>
+	 *         &lt;element name="exp_item" maxOccurs="unbounded" minOccurs="0">
+	 *           &lt;complexType>
+	 *             &lt;simpleContent>
+	 *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+	 *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
+	 *               &lt;/extension>
+	 *             &lt;/simpleContent>
+	 *           &lt;/complexType>
+	 *         &lt;/element>
+	 *       &lt;/sequence>
+	 *     &lt;/restriction>
+	 *   &lt;/complexContent>
+	 * &lt;/complexType>
+	 * </pre>
+	 * 
+	 * 
+	 */
+	@XmlAccessorType(XmlAccessType.FIELD)
+	@XmlType(name = "", propOrder = {
+			"expItem"
+	})
+	public static class PlayerExperience {
+
+		@XmlElement(name = "exp_item")
+		protected List<Data.PlayerExperience.ExpItem> expItem;
+
+		/**
+		 * Gets the value of the expItem property.
+		 * 
+		 * <p>
+		 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you
+		 * make to the returned list will be present inside the JAXB object. This is why there is not a <CODE>set</CODE>
+		 * method for the expItem property.
+		 * 
+		 * <p>
+		 * For example, to add a new item, do as follows:
+		 * 
+		 * <pre>
+		 * getExpItem().add(newItem);
+		 * </pre>
+		 * 
+		 * 
+		 * <p>
+		 * Objects of the following type(s) are allowed in the list {@link Data.PlayerExperience.ExpItem }
+		 * 
+		 * 
+		 */
+		public List<Data.PlayerExperience.ExpItem> getExpItem() {
+			if (expItem == null) {
+				expItem = new ArrayList<Data.PlayerExperience.ExpItem>();
+			}
+			return this.expItem;
+		}
+
+		/**
+		 * <p>
+		 * Java class for anonymous complex type.
+		 * 
+		 * <p>
+		 * The following schema fragment specifies the expected content contained within this class.
+		 * 
+		 * <pre>
+		 * &lt;complexType>
+		 *   &lt;simpleContent>
+		 *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+		 *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
+		 *     &lt;/extension>
+		 *   &lt;/simpleContent>
+		 * &lt;/complexType>
+		 * </pre>
+		 * 
+		 * 
+		 */
+		@XmlAccessorType(XmlAccessType.FIELD)
+		@XmlType(name = "", propOrder = {
+				"value"
+		})
+		public static class ExpItem implements IModelXML {
+
+			@XmlValue
+			protected String value;
+			@XmlAttribute(name = "id")
+			@XmlSchemaType(name = "unsignedByte")
+			protected Short id;
+
+			/**
+			 * Gets the value of the value property.
+			 * 
+			 * @return possible object is {@link String }
+			 * 
+			 */
+			public String getValue() {
+				return value;
+			}
+
+			/**
+			 * Sets the value of the value property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link String }
+			 * 
+			 */
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			/**
+			 * Gets the value of the id property.
+			 * 
+			 * @return possible object is {@link Short }
+			 * 
+			 */
+			public Short getId() {
+				return id;
+			}
+
+			/**
+			 * Sets the value of the id property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link Short }
+			 * 
+			 */
+			public void setId(Short value) {
+				this.id = value;
+			}
+			
+			@Override
+			public Long getIDRow() {				
+				return getId() != null ? new Long(getId()) : 0L;
+			}
+
+		}
+
+	}
+
+	/**
+	 * <p>
+	 * Java class for anonymous complex type.
+	 * 
+	 * <p>
+	 * The following schema fragment specifies the expected content contained within this class.
+	 * 
+	 * <pre>
+	 * &lt;complexType>
+	 *   &lt;complexContent>
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *       &lt;sequence>
+	 *         &lt;element name="position" maxOccurs="unbounded" minOccurs="0">
+	 *           &lt;complexType>
+	 *             &lt;simpleContent>
+	 *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+	 *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
+	 *               &lt;/extension>
+	 *             &lt;/simpleContent>
+	 *           &lt;/complexType>
+	 *         &lt;/element>
+	 *       &lt;/sequence>
+	 *     &lt;/restriction>
+	 *   &lt;/complexContent>
+	 * &lt;/complexType>
+	 * </pre>
+	 * 
+	 * 
+	 */
+	@XmlAccessorType(XmlAccessType.FIELD)
+	@XmlType(name = "", propOrder = {
+			"position"
+	})
+	public static class Positions {
+
+		protected List<Data.Positions.Position> position;
+
+		/**
+		 * Gets the value of the position property.
+		 * 
+		 * <p>
+		 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you
+		 * make to the returned list will be present inside the JAXB object. This is why there is not a <CODE>set</CODE>
+		 * method for the position property.
+		 * 
+		 * <p>
+		 * For example, to add a new item, do as follows:
+		 * 
+		 * <pre>
+		 * getPosition().add(newItem);
+		 * </pre>
+		 * 
+		 * 
+		 * <p>
+		 * Objects of the following type(s) are allowed in the list {@link Data.Positions.Position }
+		 * 
+		 * 
+		 */
+		public List<Data.Positions.Position> getPosition() {
+			if (position == null) {
+				position = new ArrayList<Data.Positions.Position>();
+			}
+			return this.position;
+		}
+
+		/**
+		 * <p>
+		 * Java class for anonymous complex type.
+		 * 
+		 * <p>
+		 * The following schema fragment specifies the expected content contained within this class.
+		 * 
+		 * <pre>
+		 * &lt;complexType>
+		 *   &lt;simpleContent>
+		 *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+		 *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
+		 *     &lt;/extension>
+		 *   &lt;/simpleContent>
+		 * &lt;/complexType>
+		 * </pre>
+		 * 
+		 * 
+		 */
+		@XmlAccessorType(XmlAccessType.FIELD)
+		@XmlType(name = "", propOrder = {
+				"value"
+		})
+		public static class Position implements IModelXML {
+
+			@XmlValue
+			protected String value;
+			@XmlAttribute(name = "id")
+			@XmlSchemaType(name = "unsignedByte")
+			protected Short id;
+
+			/**
+			 * Gets the value of the value property.
+			 * 
+			 * @return possible object is {@link String }
+			 * 
+			 */
+			public String getValue() {
+				return value;
+			}
+
+			/**
+			 * Sets the value of the value property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link String }
+			 * 
+			 */
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			/**
+			 * Gets the value of the id property.
+			 * 
+			 * @return possible object is {@link Short }
+			 * 
+			 */
+			public Short getId() {
+				return id;
+			}
+
+			/**
+			 * Sets the value of the id property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link Short }
+			 * 
+			 */
+			public void setId(Short value) {
+				this.id = value;
+			}
+
+			@Override
+			public Long getIDRow() {
+				return getId() != null ? new Long(getId()) : 0L;
+			}
+
+		}
+
+	}
+
+	/**
+	 * <p>
+	 * Java class for anonymous complex type.
+	 * 
+	 * <p>
+	 * The following schema fragment specifies the expected content contained within this class.
+	 * 
+	 * <pre>
+	 * &lt;complexType>
+	 *   &lt;complexContent>
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *       &lt;sequence>
+	 *         &lt;element name="side" maxOccurs="unbounded" minOccurs="0">
+	 *           &lt;complexType>
+	 *             &lt;simpleContent>
+	 *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+	 *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
+	 *               &lt;/extension>
+	 *             &lt;/simpleContent>
+	 *           &lt;/complexType>
+	 *         &lt;/element>
+	 *       &lt;/sequence>
+	 *     &lt;/restriction>
+	 *   &lt;/complexContent>
+	 * &lt;/complexType>
+	 * </pre>
+	 * 
+	 * 
+	 */
+	@XmlAccessorType(XmlAccessType.FIELD)
+	@XmlType(name = "", propOrder = {
+			"side"
+	})
+	public static class Sides {
+
+		protected List<Data.Sides.Side> side;
+
+		/**
+		 * Gets the value of the side property.
+		 * 
+		 * <p>
+		 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you
+		 * make to the returned list will be present inside the JAXB object. This is why there is not a <CODE>set</CODE>
+		 * method for the side property.
+		 * 
+		 * <p>
+		 * For example, to add a new item, do as follows:
+		 * 
+		 * <pre>
+		 * getSide().add(newItem);
+		 * </pre>
+		 * 
+		 * 
+		 * <p>
+		 * Objects of the following type(s) are allowed in the list {@link Data.Sides.Side }
+		 * 
+		 * 
+		 */
+		public List<Data.Sides.Side> getSide() {
+			if (side == null) {
+				side = new ArrayList<Data.Sides.Side>();
+			}
+			return this.side;
+		}
+
+		/**
+		 * <p>
+		 * Java class for anonymous complex type.
+		 * 
+		 * <p>
+		 * The following schema fragment specifies the expected content contained within this class.
+		 * 
+		 * <pre>
+		 * &lt;complexType>
+		 *   &lt;simpleContent>
+		 *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+		 *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
+		 *     &lt;/extension>
+		 *   &lt;/simpleContent>
+		 * &lt;/complexType>
+		 * </pre>
+		 * 
+		 * 
+		 */
+		@XmlAccessorType(XmlAccessType.FIELD)
+		@XmlType(name = "", propOrder = {
+				"value"
+		})
+		public static class Side implements IModelXML {
+
+			@XmlValue
+			protected String value;
+			@XmlAttribute(name = "id")
+			@XmlSchemaType(name = "unsignedByte")
+			protected Short id;
+
+			/**
+			 * Gets the value of the value property.
+			 * 
+			 * @return possible object is {@link String }
+			 * 
+			 */
+			public String getValue() {
+				return value;
+			}
+
+			/**
+			 * Sets the value of the value property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link String }
+			 * 
+			 */
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			/**
+			 * Gets the value of the id property.
+			 * 
+			 * @return possible object is {@link Short }
+			 * 
+			 */
+			public Short getId() {
+				return id;
+			}
+
+			/**
+			 * Sets the value of the id property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link Short }
+			 * 
+			 */
+			public void setId(Short value) {
+				this.id = value;
+			}
+
+			@Override
+			public Long getIDRow() {
+				return getId() != null ? new Long(getId()) : 0L;
+			}
+
+		}
+
+	}
+
+	/**
+	 * <p>
+	 * Java class for anonymous complex type.
+	 * 
+	 * <p>
+	 * The following schema fragment specifies the expected content contained within this class.
+	 * 
+	 * <pre>
+	 * &lt;complexType>
+	 *   &lt;complexContent>
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *       &lt;sequence>
+	 *         &lt;element name="training_item" maxOccurs="unbounded" minOccurs="0">
+	 *           &lt;complexType>
+	 *             &lt;simpleContent>
+	 *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+	 *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
+	 *               &lt;/extension>
+	 *             &lt;/simpleContent>
+	 *           &lt;/complexType>
+	 *         &lt;/element>
+	 *       &lt;/sequence>
+	 *     &lt;/restriction>
+	 *   &lt;/complexContent>
+	 * &lt;/complexType>
+	 * </pre>
+	 * 
+	 * 
+	 */
+	@XmlAccessorType(XmlAccessType.FIELD)
+	@XmlType(name = "", propOrder = {
+			"trainingItem"
+	})
+	public static class Trainings {
+
+		@XmlElement(name = "training_item")
+		protected List<Data.Trainings.TrainingItem> trainingItem;
+
+		/**
+		 * Gets the value of the trainingItem property.
+		 * 
+		 * <p>
+		 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you
+		 * make to the returned list will be present inside the JAXB object. This is why there is not a <CODE>set</CODE>
+		 * method for the trainingItem property.
+		 * 
+		 * <p>
+		 * For example, to add a new item, do as follows:
+		 * 
+		 * <pre>
+		 * getTrainingItem().add(newItem);
+		 * </pre>
+		 * 
+		 * 
+		 * <p>
+		 * Objects of the following type(s) are allowed in the list {@link Data.Trainings.TrainingItem }
+		 * 
+		 * 
+		 */
+		public List<Data.Trainings.TrainingItem> getTrainingItem() {
+			if (trainingItem == null) {
+				trainingItem = new ArrayList<Data.Trainings.TrainingItem>();
+			}
+			return this.trainingItem;
+		}
+
+		/**
+		 * <p>
+		 * Java class for anonymous complex type.
+		 * 
+		 * <p>
+		 * The following schema fragment specifies the expected content contained within this class.
+		 * 
+		 * <pre>
+		 * &lt;complexType>
+		 *   &lt;simpleContent>
+		 *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+		 *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}unsignedByte" />
+		 *     &lt;/extension>
+		 *   &lt;/simpleContent>
+		 * &lt;/complexType>
+		 * </pre>
+		 * 
+		 * 
+		 */
+		@XmlAccessorType(XmlAccessType.FIELD)
+		@XmlType(name = "", propOrder = {
+				"value"
+		})
+		public static class TrainingItem implements IModelXML {
+
+			@XmlValue
+			protected String value;
+			@XmlAttribute(name = "id")
+			@XmlSchemaType(name = "unsignedByte")
+			protected Short id;
+
+			/**
+			 * Gets the value of the value property.
+			 * 
+			 * @return possible object is {@link String }
+			 * 
+			 */
+			public String getValue() {
+				return value;
+			}
+
+			/**
+			 * Sets the value of the value property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link String }
+			 * 
+			 */
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			/**
+			 * Gets the value of the id property.
+			 * 
+			 * @return possible object is {@link Short }
+			 * 
+			 */
+			public Short getId() {
+				return id;
+			}
+
+			/**
+			 * Sets the value of the id property.
+			 * 
+			 * @param value
+			 *            allowed object is {@link Short }
+			 * 
+			 */
+			public void setId(Short value) {
+				this.id = value;
+			}
+
+			@Override
+			public Long getIDRow() {
+				return getId() != null ? new Long(getId()) : 0L;
+			}
+
+		}
+
+	}
+
+	@Override
+	public Long getIDRow() {
+		return 0L;
+	}
 
 }

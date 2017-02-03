@@ -17,6 +17,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
+
 
 /**
  * <p>Java class for anonymous complex type.
@@ -148,7 +150,7 @@ public class Data {
         "homeGoals",
         "awayGoals"
     })
-    public static class Game {
+    public static class Game implements IModelXML {
 
         @XmlElement(name = "match_id")
         @XmlSchemaType(name = "unsignedInt")
@@ -519,6 +521,11 @@ public class Data {
         public void setAwayGoals(Short value) {
             this.awayGoals = value;
         }
+        
+    	@Override
+    	public Long getIDRow() {
+    		return getMatchId() != null ? getMatchId() : 0L; 
+    	}
 
     }
 

@@ -3,6 +3,7 @@ package it.marcocarettoni.Footstar.DAO.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.Cities.City;
 
 public class CityDAO extends IDAO {
@@ -16,15 +17,16 @@ public class CityDAO extends IDAO {
 
 	public CityDAO() {
 	}
-
-	public CityDAO(ResultSet rs) throws SQLException {
-		setByResultSet(rs);
-	}
 	
 	public CityDAO(City cy, int language) {
 		setByXML(cy, language);
 	}
 
+	public CityDAO(ResultSet rs) throws SQLException {
+		setByResultSet(rs);
+	}
+	
+	
 	public void setByResultSet(ResultSet rs) throws SQLException {
 		ID = rs.getInt("ID");
 		IDL = rs.getInt("IDL");
@@ -32,7 +34,12 @@ public class CityDAO extends IDAO {
 		DESCR = rs.getString("DESCR");
 	}
 	
-	public void setByXML(City cy, int language) {		
+	@Override
+	protected void setByXML(IModelXML cyx){}
+	
+	@Override
+	protected void setByXML(IModelXML cyx, int language) {		
+		City cy = (City) cyx;
 		ID = cy.getId();
 		IDL = language;
 		ID_COUNTRY = cy.getCountryId();

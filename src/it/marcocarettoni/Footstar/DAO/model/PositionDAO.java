@@ -3,6 +3,7 @@ package it.marcocarettoni.Footstar.DAO.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.Positions.Position;
 
 public class PositionDAO extends IDAO {
@@ -30,7 +31,12 @@ public class PositionDAO extends IDAO {
 		DESCR = rs.getString("DESCR");
 	}
 
-	public void setByXML(Position cy, int language) {
+	@Override
+	protected void setByXML(IModelXML cy){}
+	
+	@Override
+	protected void setByXML(IModelXML cyz, int language) {
+		Position cy = (Position) cyz;
 		ID = cy.getId();
 		IDL = language;
 		DESCR = cy.getValue();

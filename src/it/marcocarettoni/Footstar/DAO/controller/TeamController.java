@@ -3,42 +3,21 @@ package it.marcocarettoni.Footstar.DAO.controller;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.HashSet;
-import java.util.List;
 
 import it.marcocarettoni.Footstar.DAO.DataPool.DB;
+import it.marcocarettoni.Footstar.DAO.model.IModelDAO;
 import it.marcocarettoni.Footstar.DAO.model.TeamDAO;
-import it.marcocarettoni.Footstar.xml.model.team.TeamData;
 
 public class TeamController extends DAOController {
 
-	private HashSet<Integer> aggiunti = null;
-
 	public TeamController() {
 		super(TeamController.class, TeamDAO.table_name);
-		aggiunti = new HashSet<Integer>();
 	}
 
-	public void processData(Connection c, List<TeamData> lista) throws SQLException {
-		for (TeamData row : lista) {
-			if (row != null && row.getTeamId() != null) {
-				if (!aggiunti.contains(row.getTeamId())) {
-					logger.debug("Inserito TeamID: " + row.getTeamId());
-					addRow(c, new TeamDAO(row));
-					aggiunti.add(row.getTeamId());
-				} else {
-					logger.debug("Team gia inserito TeamID: " + row.getTeamId());
-				}
-			} else {
-				logger.debug("Team inesistente: " + row.getTeamId());
-			}
-		}
-	}
-
-	private void addRow(Connection c, TeamDAO ob) throws SQLException {
+	public void addRow(Connection c, IModelDAO obj) throws SQLException {
+		TeamDAO ob = (TeamDAO) obj;
 		PreparedStatement s = null;
 		try {
-			// TODO implementare insert in team dat
 			s = c.prepareStatement(" INSERT INTO " + table_name + " ( " +
 					" team_userid, team_playerid, team_useralias, team_id, b_team, " +
 					" main_team_id, team_name, team_long_name, team_country_id, team_city, " +

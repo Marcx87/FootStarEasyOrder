@@ -3,6 +3,7 @@ package it.marcocarettoni.Footstar.DAO.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.MentalSkills.Skill;
 
 public class SkillDAO extends IDAO {
@@ -30,7 +31,12 @@ public class SkillDAO extends IDAO {
 		DESCR = rs.getString("DESCR");
 	}
 	
-	public void setByXML(Skill cy, int language) {
+	@Override
+	protected void setByXML(IModelXML cyz) {}
+
+	@Override
+	protected void setByXML(IModelXML cyz, int language) {
+		Skill cy = (Skill) cyz;
 		ID = cy.getId();
 		IDL = language;
 		DESCR = cy.getValue();

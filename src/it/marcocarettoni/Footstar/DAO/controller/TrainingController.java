@@ -5,9 +5,11 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import it.marcocarettoni.Footstar.DAO.DataPool.DB;
+import it.marcocarettoni.Footstar.DAO.model.IModelDAO;
 import it.marcocarettoni.Footstar.DAO.model.TrainingDAO;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.Trainings;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.Trainings.TrainingItem;
+
 public class TrainingController extends DAOController {
 
 	public TrainingController() {
@@ -20,7 +22,8 @@ public class TrainingController extends DAOController {
 		}
 	}
 
-	private void addRow(Connection c, TrainingDAO city) throws SQLException {
+	public void addRow(Connection c, IModelDAO ob) throws SQLException {
+		TrainingDAO city = (TrainingDAO) ob;
 		PreparedStatement s = null;
 		try {
 			s = c.prepareStatement(" INSERT INTO " + table_name + " ( " +

@@ -3,6 +3,7 @@ package it.marcocarettoni.Footstar.DAO.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 import it.marcocarettoni.Footstar.xml.model.team.TeamData;
 
 public class TeamDAO extends IDAO {
@@ -130,8 +131,9 @@ public class TeamDAO extends IDAO {
 		wt_last_changed = rs.getString("wt_last_changed");
 	}
 
-	public void setByXML(TeamData cy) {
-
+	@Override
+	protected void setByXML(IModelXML cyz) {
+		TeamData cy = (TeamData) cyz;
 		team_userid = cy.getTeamUserid();
 		team_playerid = cy.getTeamPlayerid();
 		team_useralias = cy.getTeamUseralias();
@@ -189,6 +191,9 @@ public class TeamDAO extends IDAO {
 		}
 	}
 
+	@Override
+	protected void setByXML(IModelXML cyz, int xx) {}
+	
 	public Integer getTeam_userid() {
 		return team_userid;
 	}

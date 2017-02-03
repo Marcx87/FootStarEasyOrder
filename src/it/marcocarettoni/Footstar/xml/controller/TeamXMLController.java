@@ -2,53 +2,47 @@ package it.marcocarettoni.Footstar.xml.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.xml.bind.JAXBElement;
 
-import it.marcocarettoni.Footstar.DAO.DataPool.DB;
-import it.marcocarettoni.Footstar.DAO.controller.TeamController;
 import it.marcocarettoni.Footstar.DAO.model.DBDataDAO;
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 import it.marcocarettoni.Footstar.xml.model.team.TeamData;
-
 
 public class TeamXMLController extends XMLIController {
 
-	public TeamXMLController() {
+	private final String URL = "http://www.footstar.org/xml_feed.asp?type=2&username=Psycho87&password=tester&program_id=275&language=1&team_id=";
+
+	public TeamXMLController(Connection c, DBDataDAO dbData) {
 		super(TeamXMLController.class);
+		lista = Collections.synchronizedList(new ArrayList<IModelXML>());
+		
+		idx = new AtomicInteger(dbData.getMIN_TEAM_ID());
+		end = dbData.getMAX_TEAM_ID();
 	}
 
-	protected void parseDati(Connection c, DBDataDAO dbData) throws SQLException {
-		int inizio = 2601; //dbData.getMIN_TEAM_ID();
-		int fine = dbData.getMAX_TEAM_ID();
-		
-		TeamController tc = new TeamController();
-		
-		for (int i = inizio + 99 ; i <= fine ; i = (i+100>fine?fine+1:i + 100))
-		{
-			ArrayList<TeamData> lista = getSoapDati(i-99, i);
-			logger.debug("Processing TeamData");
-			tc.processData(c, lista);
-			DB.commit(c);
-		}
-	}
-
-	private ArrayList<TeamData> getSoapDati(int start, int end) {
-		ArrayList<TeamData> lista = new ArrayList<TeamData>();
-		logger.debug("Init getTeamData");
-		for (int i = start; i <= end; i++) {
+	public void getSoapDati() {
+		while (this.idx.get() <= end) {
+			int idx = this.idx.getAndIncrement();
 			try {
-				logger.debug("getTeamData - idTeam: " + i);
-				String result = getSOAP("http://www.footstar.org/xml_feed.asp?type=2&username=Psycho87&password=tester&program_id=275&language=1&team_id=" + i);
-				JAXBElement<?> parsed = parseSOAP(TeamData.class, result, i);
-				if (parsed != null)
-					lista.add((TeamData) parsed.getValue());
+				logger.info("[" + Thread.currentThread().getId() + "] Get Soap Dati TeamData: " + idx);
+				String result = getSOAP(URL + idx);
+				JAXBElement<?> parsed = parseSOAP(TeamData.class, result, idx);
+				if (parsed != null) {
+					TeamData team = (TeamData) parsed.getValue();
+					if (team != null && team != null) {
+						lista.add(team);
+					}
+				}
+
+				if (idx == end)
+					parsedToEnd = true;
 			} catch (IOException ioe) {
-				logger.error("IOException getTeamData idTeam: " + i, ioe);
+				logger.error("IOException getTeamData idTeam: " + idx, ioe);
 			}
 		}
-		return lista;
 	}
-
 }

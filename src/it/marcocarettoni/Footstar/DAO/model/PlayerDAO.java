@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import it.marcocarettoni.Footstar.xml.model.IModelXML;
 import it.marcocarettoni.Footstar.xml.model.player.Player;
 import it.marcocarettoni.Footstar.xml.model.player.Player.Adaptabilities.Adaptability;
 import it.marcocarettoni.Footstar.xml.model.player.Player.NationalTeams.Country;
@@ -223,7 +224,12 @@ public class PlayerDAO extends IDAO {
 
 	}
 
-	public void setByXML(Player cy) {
+	@Override
+	protected void setByXML(IModelXML cy, int xx) {}
+	
+	@Override
+	protected void setByXML(IModelXML cyx) {		
+		Player cy = (Player) cyx;
 		playerId = cy.getPlayerId();
 		userId = (cy.getUserId() == null ? -1 : cy.getUserId());
 		lastLogin = (cy.getLastLogin() == null ? "" : cy.getLastLogin());
@@ -323,15 +329,15 @@ public class PlayerDAO extends IDAO {
 		adaptabilities = new ArrayList<PlayerAdaptabilityDAO>();
 
 		for (Adaptability ob : cy.getAdaptabilities().getAdaptability())
-			adaptabilities.add(new PlayerAdaptabilityDAO(cy.getPlayerId(), ob));
+			adaptabilities.add(new PlayerAdaptabilityDAO(ob, cy.getPlayerId()));
 
 		talents = new ArrayList<PlayerTalentsDAO>();
 		for (Talent ob : cy.getTalents().getTalent())
-			talents.add(new PlayerTalentsDAO(cy.getPlayerId(), ob));
+			talents.add(new PlayerTalentsDAO(ob, cy.getPlayerId()));
 
 		nationalTeams = new ArrayList<PlayerNTDAO>();
 		for (Country ob : cy.getNationalTeams().getCountry())
-			nationalTeams.add(new PlayerNTDAO(cy.getPlayerId(), ob));
+			nationalTeams.add(new PlayerNTDAO(ob, cy.getPlayerId()));
 	}
 
 	public Integer getPlayerId() {

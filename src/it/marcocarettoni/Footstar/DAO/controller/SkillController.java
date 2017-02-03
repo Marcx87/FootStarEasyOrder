@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import it.marcocarettoni.Footstar.DAO.DataPool.DB;
+import it.marcocarettoni.Footstar.DAO.model.IModelDAO;
 import it.marcocarettoni.Footstar.DAO.model.SkillDAO;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.MentalSkills;
 import it.marcocarettoni.Footstar.xml.model.denominazioni.Data.MentalSkills.Skill;
@@ -21,7 +22,8 @@ public class SkillController extends DAOController {
 		}
 	}
 
-	private void addRow(Connection c, SkillDAO city) throws SQLException {
+	public void addRow(Connection c, IModelDAO ob) throws SQLException {
+		SkillDAO city = (SkillDAO) ob;
 		PreparedStatement s = null;
 		try {
 			s = c.prepareStatement(" INSERT INTO " + table_name + " ( " +

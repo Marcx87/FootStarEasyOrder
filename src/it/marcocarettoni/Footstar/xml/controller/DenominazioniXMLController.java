@@ -24,12 +24,13 @@ public class DenominazioniXMLController extends XMLIController {
 			40, 41,
 			44, 45, 46, 47, 48 };
 
+	private ArrayList<Data> lista = new ArrayList<Data>();
+	
 	public DenominazioniXMLController() {
 		super(DenominazioniXMLController.class);
 	}
 	
-	protected void parseDati(Connection c, DBDataDAO dbData) throws SQLException {
-		ArrayList<Data> lista = getSoapDati();
+	public void parseDati(Connection c, DBDataDAO dbData) throws SQLException {
 		logger.debug("Processing Lista Denominazioni");
 
 		for (int i = 0; i < lista.size(); i++) {
@@ -48,10 +49,7 @@ public class DenominazioniXMLController extends XMLIController {
 		}
 	}
 
-	private ArrayList<Data> getSoapDati() {
-
-		ArrayList<Data> lista = new ArrayList<Data>();
-
+	public void getSoapDati() {
 		logger.debug("Init get Denominazioni");
 		for (int i = 1; i <= languages.length; i++) {
 			try {
@@ -62,8 +60,6 @@ public class DenominazioniXMLController extends XMLIController {
 				logger.error("IOException Denominazioni idLang: " + i, ioe);
 			}
 		}
-
-		return lista;
 	}
 
 }
